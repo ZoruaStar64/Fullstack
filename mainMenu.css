@@ -1,0 +1,20 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #F7E8FD;
+}
+
+.button {
+    color: #f3d400;
+    background-color: #8844D5;
+    border: 13px solid #6F04BF;
+    padding: 10px 15px 10px 15px;
+    font-size: 30px;
+    font-family: Stencil, SansSerif, serif;
+
+    text-decoration: none;
+}
