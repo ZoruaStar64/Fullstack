@@ -5,16 +5,72 @@
 }
 
 html {
-    background-color: #F7E8FD;
-}
+    background-color: #8844D5;
+}/*#F7E8FD*/
 
 .button {
     color: #f3d400;
-    background-color: #8844D5;
+    background-color: #8844d5;
     border: 13px solid #6F04BF;
     padding: 10px 15px 10px 15px;
     font-size: 30px;
     font-family: Stencil, SansSerif, serif;
-
     text-decoration: none;
+}
+
+.pageContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 25px;
+    grid-template-areas:
+    ". logo ."
+    " . buttonContainer . "
+    " . buttonContainer . "
+    " . buttonContainer . ";
+}
+
+#pageLogo {
+ /*   width: 50%;
+    height: 50%;*/
+    grid-area: logo;
+}
+
+/* Shine */
+.Shine {
+    grid-area: buttonContainer;
+    justify-self: center;
+}
+.Shine figure {
+    position: relative;
+}
+/*255,255,255,0*/
+/*243,212,0,0*/
+.Shine figure::before {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: -webkit-linear-gradient(left, rgba(136,63,213,0) 0%, rgba(136,63,213,.3) 100%);
+    background: linear-gradient(to right, rgba(136,63,213,0) 0%, rgba(136,63,213,.3) 100%);
+    -webkit-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+}
+.Shine figure:hover::before {
+    -webkit-animation: shine .75s;
+    animation: shine .75s;
+}
+@-webkit-keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+@keyframes shine {
+    100% {
+        left: 125%;
+    }
 }
