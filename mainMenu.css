@@ -31,8 +31,7 @@ html {
 }
 
 #pageLogo {
- /*   width: 50%;
-    height: 50%;*/
+    margin-top: 50px;
     grid-area: logo;
 }
 
