@@ -1,3 +1,8 @@
+const registerButton = document.getElementById('registerButton');
+const registerForm = document.getElementById('registerForm');
+const loginButton = document.getElementById('loginButton');
+const loginForm = document.getElementById('loginForm');
+
 let current_rotation = 0;
 let firstRotation = true;
 let rotateRight = true;
@@ -51,4 +56,19 @@ async function logoAnimation() {
 }
 
 
+
+registerButton.addEventListener('click', showRegisterForm);
+function showRegisterForm() {
+    if (registerForm.style.display === 'none') {
+        registerForm.style.display = 'block';
+    }
+    else {
+        registerForm.style.display = 'none';
+    }
+}
+
+loginButton.addEventListener('click', showLoginForm);
+function showLoginForm() {
+
+}
 
