@@ -7,6 +7,9 @@
 </head>
 <body>
 <div class="pageContainer">
+    <div class="userBox">
+
+    </div>
 <img id="pageLogo" src="img/StarGameTrackerLogo.png" alt="Star Tracker logo">
 
 
@@ -16,6 +19,7 @@ require_once('creds.php');
 require_once('functions.php');
 $showloggedin = false;
 
+echo $creationMessage;
 echo "<div class='Shine'>";
 echo "<div><a href='#'><figure><img src='img/MainMenuButton.png' alt='main menu button'></figure></a></div>";
 if ($showloggedin == false) {
@@ -47,8 +51,21 @@ echo "</div>"
         </div>
 
         <input id="creationButton" type='submit' name='createAcc' value='Create Account'>
-        <?php $creationMessage; ?>
 
+
+    </form>
+    <br>
+
+    <form id="loginForm" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>' method='POST'>
+        <div class="inputContainer">
+            Email &emsp;&ensp;&nbsp;: <input type='text' name='emailLogin' value=''>
+        </div>
+
+        <div class="inputContainer">
+            Password &nbsp;: <input type='password' name='passwordLogin' value=''>
+        </div>
+
+        <input id="ActualLoginButton" type='submit' name='login' value='Login'>
     </form>
     <br>
     <?php

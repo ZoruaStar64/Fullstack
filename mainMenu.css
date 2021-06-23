@@ -27,7 +27,7 @@ html {
     ". logo ."
     " . buttonContainer . "
     " . buttonContainer registerForm"
-    " . buttonContainer . ";
+    " . buttonContainer loginForm ";
 }
 
 #pageLogo {
@@ -98,6 +98,26 @@ input {
 }
 
 #creationButton {
+    float: left;
+    margin: 2% 50% 0 35%;
+    background-color: #f3d400;
+    align-self: center;
+    width: 30%;
+    height: 30%;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+#loginForm {
+    font-size: 20px;
+    display: none;
+    height: 125%;
+    border: 15px solid #6F04BF;
+    background-color: #6e6ec6;
+    grid-area: loginForm;
+}
+
+#ActualLoginButton {
     float: left;
     margin: 2% 50% 0 35%;
     background-color: #f3d400;

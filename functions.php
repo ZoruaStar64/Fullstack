@@ -1,6 +1,6 @@
 <?php
 require_once('creds.php');
-$creationMessage = "";
+$creationMessage = "test";
 if (isset($_POST["createAcc"])) {
 
     if (isset($_POST["emailReg"])) {
@@ -35,10 +35,11 @@ function createAccount ($link, $emailReg, $nickname, $passwordReg)
     }
 }
 
+
 function inLogFormulier($link) {
 
-    $email = $_POST['email'];
-    $wachtwoord = $_POST['wachtwoord'];
+    $email = $_POST['emailLogin'];
+    $wachtwoord = $_POST['passwordLogin'];
 
     $query = "select * from u3651p69583_tracker.Users where `e-mail` = '$email'";
     $statement = mysqli_prepare($link, $query);
@@ -51,7 +52,7 @@ function inLogFormulier($link) {
 
     }
 
-    if (isset($_POST['knop'])
+    if (isset($_POST['login'])
         && $email == $trueEmail && $wachtwoord == $trueWachtwoord) {
         $_SESSION["user"] = array("naam" => $trueEmail,
             "wachtwoord" => $trueWachtwoord);

@@ -69,6 +69,11 @@ function showRegisterForm() {
 
 loginButton.addEventListener('click', showLoginForm);
 function showLoginForm() {
-
+    if (loginForm.style.display === 'none') {
+        loginForm.style.display = 'block';
+    }
+    else {
+        loginForm.style.display = 'none';
+    }
 }
 
