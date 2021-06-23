@@ -24,15 +24,23 @@ html {
     grid-template-rows: auto;
     grid-gap: 25px;
     grid-template-areas:
-    ". logo ."
-    " . buttonContainer . "
-    " . buttonContainer registerForm"
-    " . buttonContainer loginForm ";
+    "userBox logo registerForm"
+    "userBox buttonContainer registerForm "
+    "userBox buttonContainer loginForm"
+    "userBox buttonContainer loginForm ";
 }
 
 #pageLogo {
     margin-top: 50px;
     grid-area: logo;
+}
+
+.userBox {
+    background-color: #6e6ec6;
+    border: 5px solid #6F04BF;
+    width: 50vh;
+    height: 100vh;
+    grid-area: userBox;
 }
 
 /* Shine */
@@ -79,7 +87,7 @@ html {
 
 input {
     float: right;
-    width: 73%;
+    width: 65%;
     margin-right: 2%;
 }
 
@@ -91,19 +99,20 @@ input {
 #registerForm {
     font-size: 20px;
     display: none;
-    height: 125%;
-    border: 15px solid #6F04BF;
+    height: 50%;
+    width: 100%;
+    border: 10px solid #6F04BF;
     background-color: #6e6ec6;
     grid-area: registerForm;
 }
 
 #creationButton {
     float: left;
-    margin: 2% 50% 0 35%;
+    margin: 2% 50% 5% 35%;
     background-color: #f3d400;
     align-self: center;
     width: 30%;
-    height: 30%;
+    height: 23%;
     border: 2px solid black;
     border-radius: 50%;
 }
@@ -111,7 +120,7 @@ input {
 #loginForm {
     font-size: 20px;
     display: none;
-    height: 125%;
+    height: 80%;
     border: 15px solid #6F04BF;
     background-color: #6e6ec6;
     grid-area: loginForm;

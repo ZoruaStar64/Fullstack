@@ -1,6 +1,9 @@
 <?php
 require_once('creds.php');
-$creationMessage = "test";
+
+
+$creationMessage = "";
+
 if (isset($_POST["createAcc"])) {
 
     if (isset($_POST["emailReg"])) {
@@ -14,16 +17,23 @@ if (isset($_POST["createAcc"])) {
     if (isset($_POST["nickname"])) {
         $nickname = $_POST["nickname"];
     }
-    createAccount($link, $emailReg, $nickname, $passwordReg);
+
+    if (isset($_POST["gender"])) {
+        foreach ($_POST["gender"] as $theGender) {
+            $gender = $theGender;
+        }
+
+    }
+    createAccount($link, $emailReg, $nickname, $passwordReg, $gender);
 }
 
 
-function createAccount ($link, $emailReg, $nickname, $passwordReg)
+function createAccount ($link, $emailReg, $nickname, $passwordReg, $gender)
 {
 
-    $query = "INSERT INTO u3651p69583_tracker.Users(`e-mail`, nickname, password) VALUE (?, ?, ?)";
+    $query = "INSERT INTO u3651p69583_tracker.Users(`e-mail`, nickname, password, gender) VALUE (?, ?, ?, ?)";
     $stmt1 = mysqli_prepare($link, $query);
-    $stmt1->bind_param("sss", $emailReg, $nickname, $passwordReg);
+    $stmt1->bind_param("ssss", $emailReg, $nickname, $passwordReg, $gender);
     if (!$stmt1) {
         die("mysqli error: " . mysqli_error($link));
     } else {
