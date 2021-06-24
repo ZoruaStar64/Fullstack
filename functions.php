@@ -1,6 +1,20 @@
 <?php
 require_once('creds.php');
+global $link;
+/*$query = "SELECT * FROM Users";
+$result = $link->query($query);*/
+/*JSC($result);*/
+/*JSC($link);*/
 
+/*while ($row = $result->fetch_assoc()){
+    JSC($row['nickname'] );
+}*/
+
+/*function JSC($input){
+    echo "<pre>";
+    print_r($input);
+    echo "</pre>";
+}*/
 
 $creationMessage = "";
 
@@ -45,28 +59,37 @@ function createAccount ($link, $emailReg, $nickname, $passwordReg, $gender)
     }
 }
 
+if (isset($_POST["login"])) {
+    inLogFormulier($link);
+}
 
 function inLogFormulier($link) {
 
     $email = $_POST['emailLogin'];
     $wachtwoord = $_POST['passwordLogin'];
 
-    $query = "select * from u3651p69583_tracker.Users where `e-mail` = '$email'";
-    $statement = mysqli_prepare($link, $query);
-    $statement->bind_param("ss", $trueEmail, $trueWachtwoord);
+    $query = "SELECT * FROM u3651p69583_tracker.Users where `e-mail` = '$email'";
+    $result = $link->query($query);
+ /*   $statement = mysqli_prepare($link, $query);
+    $statement->bind_param("isssss", $userId, $trueEmail, $nick, $trueWachtwoord, $gender, $profilePicture);*/
 
-    while ($arraytable = $statement->fetch()) {
+    while ($arraytable = $result->fetch_assoc()) {
 
-        $trueEmail = $arraytable[0];
-        $trueWachtwoord = $arraytable[1];
+        $trueEmail = $arraytable['e-mail'];
+        $nick = $arraytable['nickname'];
+        $trueWachtwoord = $arraytable['password'];
+        $gender = $arraytable['gender'];
 
     }
 
     if (isset($_POST['login'])
         && $email == $trueEmail && $wachtwoord == $trueWachtwoord) {
-        $_SESSION["user"] = array("naam" => $trueEmail,
-            "wachtwoord" => $trueWachtwoord);
+        $_SESSION["user"] = array("email" => $trueEmail,
+            "name" => $nick,
+            "wachtwoord" => $trueWachtwoord,
+            "gender" => $gender);
     }
+
 }
 
 ?>

@@ -16,7 +16,7 @@ async function logoAnimation() {
     if (firstRotation === true) {
 
         for (let animLoop = 0; animLoop < 16; animLoop++) {
-            console.log(animLoop);
+
             if (rotateRight === true) {
                 current_rotation += 1;
                 pageLogo.style.transform = 'rotate(' + current_rotation + 'deg)';
@@ -30,7 +30,6 @@ async function logoAnimation() {
     }
     else {
         for (let animLoop = 0; animLoop < 31; animLoop++) {
-            console.log(animLoop);
             if (rotateRight === true) {
                 current_rotation += 1;
                 pageLogo.style.transform = 'rotate(' + current_rotation + 'deg)';
