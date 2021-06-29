@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+p {
+    font-family: 'Saira Stencil One', cursive;
+    font-size: 25px;
+    color: #f3d400;
+
+}
+
 html {
     background-color: #8844D5;
 }/*#F7E8FD*/

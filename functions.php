@@ -68,7 +68,7 @@ function inLogFormulier($link) {
     $email = $_POST['emailLogin'];
     $wachtwoord = $_POST['passwordLogin'];
 
-    $query = "SELECT * FROM u3651p69583_tracker.Users where `e-mail` = '$email'";
+    $query = "SELECT * FROM u3651p69583_tracker.Users WHERE `e-mail` = '$email'";
     $result = $link->query($query);
  /*   $statement = mysqli_prepare($link, $query);
     $statement->bind_param("isssss", $userId, $trueEmail, $nick, $trueWachtwoord, $gender, $profilePicture);*/

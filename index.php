@@ -4,27 +4,48 @@ require_once('creds.php');
 require_once('functions.php');
 $showloggedin = false;
 $profilePicture = "img/notLoggedIn.png";
-$profileName = "";
-if (isset($_SESSION["user"])) {
-    $showloggedin  = true;
-    $profileName = $_SESSION["user"] ["naam"];
+$profileName = "Not logged in";
 
-    if (isset($_SESSION["user"] ["gender"]) === "female" || "Female") {
+/*if (isset($_SESSION["user"])) {
+    $showloggedin  = true;
+    $profileName = $_SESSION["user"]["naam"];
+
+    if (isset($_SESSION["user"]["gender"]) == "secret") {
+        $profilePicture = "img/UnknownGender.png";
+    }
+    if (isset($_SESSION["user"]["gender"]) == "female") {
         $profilePicture = "img/IconWoman.png";
     }
-    else if (isset($_SESSION["user"] ["gender"]) === "male" || "Male") {
+    if (isset($_SESSION["user"]["gender"]) == "male") {
         $profilePicture = "img/IconMan.png";
-    }
-    else if (isset($_SESSION["user"] ["gender"]) === "secret" || "Secret") {
-        $profilePicture = "img/UnknownGender.png";
     }
     else {
         $profilePicture = "img/notLoggedIn.png";
     }
+}*/
+
+switch ($_SESSION["user"]["gender"]) {
+    case "male":
+        $profilePicture = "img/IconMan.png";
+        $profileName = $_SESSION["user"]["name"];
+        $showloggedin  = true;
+        break;
+    case "female":
+        $profilePicture = "img/IconWoman.png";
+        $profileName = $_SESSION["user"]["name"];
+        $showloggedin  = true;
+        break;
+    case "secret":
+        $profilePicture = "img/UnknownGender.png";
+        $profileName = $_SESSION["user"]["name"];
+        $showloggedin  = true;
+        break;
+    default:
+        $profilePicture = "img/notLoggedIn.png";
 }
 
 if (isset($_GET["logout"])) {
-    session_start();
+    /*session_start();*/
     $_SESSION = array();
     session_destroy();
 }
@@ -36,12 +57,20 @@ if (isset($_GET["logout"])) {
     <link rel="stylesheet" href="mainMenu.css">
     <link rel="shortcut icon" href="img/ColoredStar.png">
     <title>Star Game Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="pageContainer">
+    <h1><?php echo $_SESSION["user"]["gender"];?></h1>
     <div class="userBox">
-    <img id="profilePicture" src="<?php echo $profilePicture ?>" alt="Profile Picture">
-        <p><?php echo $profileName ?></p>
+    <img style="margin: 2% 0 0 2%" id="profilePicture" src="<?php echo $profilePicture ?>" alt="Profile Picture">
+        <img src="img/EmptyBlock.png" style="float: right; margin-right: 10%; margin-top: 4%">
+        <p style="position: absolute; top: 45px; left: 225px"><?php echo $profileName ?></p>
+        <?php
+
+        ?>
     </div>
 <img id="pageLogo" src="img/StarGameTrackerLogo.png" alt="Star Tracker logo">
 
@@ -61,6 +90,7 @@ if ($showloggedin == true) {
         <div><a href='?logout'><figure><img src='img/LogoutButton.png' alt='Logout button'></figure></a></div>
     <?php
 }
+
 echo $creationMessage;
 echo "</div>"
 
@@ -68,19 +98,19 @@ echo "</div>"
 
     <form id="registerForm" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>' method='POST'>
         <div class="inputContainer">
-        Email &emsp;&ensp;&nbsp;: <input type='text' name='emailReg' value=''>
+        Email &emsp;&ensp;&nbsp;: <input type='text' name='emailReg' value='' required>
         </div>
 
         <div class="inputContainer">
-        Password &nbsp;: <input type='text' name='passwordReg' value=''>
+        Password &nbsp;: <input type='text' name='passwordReg' value='' required>
         </div>
 
         <div class="inputContainer">
-        Nickname : <input type='text' name='nickname' value=''>
+        Nickname : <input type='text' name='nickname' value='' required>
         </div>
 
         <div class="inputContainer">
-            Gender : <select style="width: 50%; margin-left: 12%" name="gender[]" multiple="multiple">
+            Gender : <select style="width: 50%; margin-left: 12%" name="gender[]" multiple="multiple" required>
                 <option value="male" >Male</option>
                 <option value="female">Female</option>
                 <!--<option value="neutral">GenderNeutral</option>-->
