@@ -1,48 +1,13 @@
 <?php
 session_start();
+
 require_once('creds.php');
-require_once('functions.php');
 $showloggedin = false;
 $profilePicture = "img/notLoggedIn.png";
-$profileName = "Not logged in";
-
-/*if (isset($_SESSION["user"])) {
-    $showloggedin  = true;
-    $profileName = $_SESSION["user"]["naam"];
-
-    if (isset($_SESSION["user"]["gender"]) == "secret") {
-        $profilePicture = "img/UnknownGender.png";
-    }
-    if (isset($_SESSION["user"]["gender"]) == "female") {
-        $profilePicture = "img/IconWoman.png";
-    }
-    if (isset($_SESSION["user"]["gender"]) == "male") {
-        $profilePicture = "img/IconMan.png";
-    }
-    else {
-        $profilePicture = "img/notLoggedIn.png";
-    }
-}*/
-
-switch ($_SESSION["user"]["gender"]) {
-    case "male":
-        $profilePicture = "img/IconMan.png";
-        $profileName = $_SESSION["user"]["name"];
-        $showloggedin  = true;
-        break;
-    case "female":
-        $profilePicture = "img/IconWoman.png";
-        $profileName = $_SESSION["user"]["name"];
-        $showloggedin  = true;
-        break;
-    case "secret":
-        $profilePicture = "img/UnknownGender.png";
-        $profileName = $_SESSION["user"]["name"];
-        $showloggedin  = true;
-        break;
-    default:
-        $profilePicture = "img/notLoggedIn.png";
-}
+$userName = "Not logged in";
+$userId = 0;
+require_once('functions.php');
+/*setcookie("userCookie", $profilePicture, $userId, $userName, time(), "/~/");*/
 
 if (isset($_GET["logout"])) {
     /*session_start();*/
@@ -67,7 +32,7 @@ if (isset($_GET["logout"])) {
     <div class="userBox">
     <img style="margin: 2% 0 0 2%" id="profilePicture" src="<?php echo $profilePicture ?>" alt="Profile Picture">
         <img src="img/EmptyBlock.png" style="float: right; margin-right: 10%; margin-top: 4%">
-        <p style="position: absolute; top: 45px; left: 225px"><?php echo $profileName ?></p>
+        <p style="position: absolute; top: 55px; left: 225px"><?php echo $userName ?></p>
         <?php
 
         ?>
@@ -83,10 +48,12 @@ echo "<div><a href='#'><figure><img src='img/MainMenuButton.png' alt='main menu 
 if ($showloggedin == false) {
     ?>  <div id='registerButton'><a href='#'><figure><img src='img/Register.png' alt='Register button'></figure></a></div>
         <div id='loginButton'><a href='#'><figure><img src='img/LoginButton.png' alt='Login button'></figure></a></div>
+        <div><a href='?logout'><figure><img src='img/LogoutButton.png' alt='Logout button'></figure></a></div>
+
     <?php
 }
 if ($showloggedin == true) {
-    ?>  <div><a href='#'><figure><img src='img/ProfileButton.png' alt='Profile button'></figure></a></div>
+    ?>  <div><a href='profile.php?id=<?php echo $userId ?>'><figure><img src='img/ProfileButton.png' alt='Profile button'></figure></a></div>
         <div><a href='?logout'><figure><img src='img/LogoutButton.png' alt='Logout button'></figure></a></div>
     <?php
 }

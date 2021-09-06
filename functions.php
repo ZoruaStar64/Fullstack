@@ -1,6 +1,10 @@
 <?php
+session_start();
 require_once('creds.php');
 global $link;
+
+
+
 /*$query = "SELECT * FROM Users";
 $result = $link->query($query);*/
 /*JSC($result);*/
@@ -64,17 +68,20 @@ if (isset($_POST["login"])) {
 }
 
 function inLogFormulier($link) {
+    global $showloggedin, $profilePicture, $userName, $userId;
+
 
     $email = $_POST['emailLogin'];
     $wachtwoord = $_POST['passwordLogin'];
 
-    $query = "SELECT * FROM u3651p69583_tracker.Users WHERE `e-mail` = '$email'";
+    $query = "SELECT * FROM u3651p69583_tracker.Users WHERE `e-mail` = '$email' AND password = '$wachtwoord'";
     $result = $link->query($query);
  /*   $statement = mysqli_prepare($link, $query);
     $statement->bind_param("isssss", $userId, $trueEmail, $nick, $trueWachtwoord, $gender, $profilePicture);*/
 
     while ($arraytable = $result->fetch_assoc()) {
 
+        $profileId = $arraytable['userId'];
         $trueEmail = $arraytable['e-mail'];
         $nick = $arraytable['nickname'];
         $trueWachtwoord = $arraytable['password'];
@@ -84,11 +91,44 @@ function inLogFormulier($link) {
 
     if (isset($_POST['login'])
         && $email == $trueEmail && $wachtwoord == $trueWachtwoord) {
-        $_SESSION["user"] = array("email" => $trueEmail,
+
+        $_SESSION["user"] = array("userId" => $profileId,
+            "email" => $trueEmail,
             "name" => $nick,
             "wachtwoord" => $trueWachtwoord,
             "gender" => $gender);
+
+        $usercreds = userCreds();
+        $profilePicture = $usercreds['profilePicture'];
+        $userName = $usercreds['userName'];
+        $userId = $usercreds['userId'];
+        $showloggedin = true;
+
     }
+
+}
+
+function userCreds() {
+    $usercreds = [];
+    $gender = $_SESSION["user"]["gender"];
+    switch ($gender) {
+        case "male":
+            $usercreds['profilePicture'] = "img/IconMan.png";
+            break;
+        case "female":
+            $usercreds['profilePicture'] = "img/IconWoman.png";
+            break;
+        case "secret":
+            $usercreds['profilePicture'] = "img/UnknownGender.png";
+            break;
+        default:
+            $usercreds['profilePicture'] = "img/notLoggedIn.png";
+    }
+
+    $usercreds['userName'] = $_SESSION["user"]["name"];
+    $usercreds['userId'] = $_SESSION["user"]["userId"];
+
+    return $usercreds;
 
 }
 
