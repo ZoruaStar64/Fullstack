@@ -144,3 +144,11 @@ input {
     border: 2px solid black;
     border-radius: 50%;
 }
+
+@media all and (min-width: 1300px) {
+
+    #pageLogo {
+        width: 50%;
+        height: 50%;
+    }
+}

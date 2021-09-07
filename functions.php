@@ -68,7 +68,7 @@ if (isset($_POST["login"])) {
 }
 
 function inLogFormulier($link) {
-    global $showloggedin, $profilePicture, $userName, $userId;
+    global $showloggedin, $profilePicture, $userName, $userId, $bio;
 
 
     $email = $_POST['emailLogin'];
@@ -86,7 +86,7 @@ function inLogFormulier($link) {
         $nick = $arraytable['nickname'];
         $trueWachtwoord = $arraytable['password'];
         $gender = $arraytable['gender'];
-
+        $bio = $arraytable['bio'];
     }
 
     if (isset($_POST['login'])
@@ -96,12 +96,14 @@ function inLogFormulier($link) {
             "email" => $trueEmail,
             "name" => $nick,
             "wachtwoord" => $trueWachtwoord,
-            "gender" => $gender);
+            "gender" => $gender,
+            "bio" => $bio);
 
         $usercreds = userCreds();
         $profilePicture = $usercreds['profilePicture'];
         $userName = $usercreds['userName'];
         $userId = $usercreds['userId'];
+        $bio = $usercreds['bio'];
         $showloggedin = true;
 
     }
@@ -127,6 +129,7 @@ function userCreds() {
 
     $usercreds['userName'] = $_SESSION["user"]["name"];
     $usercreds['userId'] = $_SESSION["user"]["userId"];
+    $usercreds['bio'] = $_SESSION["user"]["bio"];
 
     return $usercreds;
 

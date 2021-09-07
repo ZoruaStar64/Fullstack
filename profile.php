@@ -12,9 +12,10 @@ require_once('functions.php');
 $details = userCreds();
 $profilePicture = $details["profilePicture"];
 $userName = $details["userName"];
-echo $userName;
-echo $profilePicture
-
+$bio = $details["bio"];
+/*echo $userName;
+echo $profilePicture;
+echo $bio;*/
 ?>
 
 <!doctype html>
@@ -30,6 +31,8 @@ echo $profilePicture
 <body>
 
 
+
+
 <div id="navbar">
     <div class="Shine">
         <div><a href='index.php'><figure><img src='img/HomeButton.png' alt='Home button'></figure></a></div>
@@ -43,8 +46,24 @@ echo $profilePicture
     <div class="profileContainer">
 
 
+        <div class="userContainer">
+            <img style="" id="profilePicture" src="<?php echo $profilePicture ?>" alt="Profile Picture">
+            <img src="img/EmptyBlock.png" style=" margin: 2.5% 0 0 10px" >
+            <p style="text-align: center; position: relative; bottom: 63px"><?php echo $userName ?></p>
+        </div>
 
+        <div class="bioContainer">
+            <p style="text-align: center"><?php echo $bio; ?></p>
+        </div>
 
+        <div class="gameContainer">
+            <img id="gameOrder" src="img/emptyTracker.png">
+            <img id="gameOrder" src="img/emptyTracker.png">
+            <img id="gameOrder" src="img/emptyTracker.png">
+            <img id="gameOrder" src="img/emptyTracker.png">
+            <img id="gameOrder" src="img/emptyTracker.png">
+            <a href="#" style="float: right; margin-right: 10px">See more</a>
+        </div>
     </div>
 
 </div>

@@ -8,6 +8,13 @@ html {
     background-color: #DAB9E3;
 }
 
+p, a{
+    font-family: 'Saira Stencil One', cursive;
+    font-size: 25px;
+    color: #f3d400;
+
+}
+
 /* return of the navbar */
 /* style the navbar */
 #navbar {
@@ -72,16 +79,46 @@ html {
     background-color: #6e6ec6;
     border: #6F04BF solid 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-gap: 25px;
     grid-template-areas:
-    ""
-    ""
-    "";
+    "user bio bio bio bio" /*area where main user things go */
+    ". . . . ." /*area where misc user things go */
+    "games games games games games"; /*area where tracked games go*/
 
 
     width: 98vw;
     height: 83vh;
     margin: 1em 1em 1em 1em;
+}
+
+.userContainer {
+    /*display: grid;*/
+    grid-area: user;
+}
+
+.bioContainer {
+    grid-area: bio;
+    border: #6F04BF 15px solid;
+    background-color: #8844D5;
+    height: 55%;
+    margin: 2.4% 1% 0 0;
+}
+
+.gameContainer {
+    grid-area: games;
+    border: #6F04BF 15px solid;
+    background-color: #8844D5;
+    height: 90%;
+    margin: 0 1% 2.3% 1%;
+
+}
+
+#gameOrder {
+    margin: 5px 5px 5px 5px;
+}
+
+@media all and (min-width: 1200px) {
+
 }

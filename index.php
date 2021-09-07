@@ -30,9 +30,11 @@ if (isset($_GET["logout"])) {
 <div class="pageContainer">
     <h1><?php echo $_SESSION["user"]["gender"];?></h1>
     <div class="userBox">
-    <img style="margin: 2% 0 0 2%" id="profilePicture" src="<?php echo $profilePicture ?>" alt="Profile Picture">
-        <img src="img/EmptyBlock.png" style="float: right; margin-right: 10%; margin-top: 4%">
-        <p style="position: absolute; top: 55px; left: 225px"><?php echo $userName ?></p>
+    <img style="margin: 0 0 0 0" id="profilePicture" src="<?php echo $profilePicture ?>" alt="Profile Picture">
+
+        <img src="img/EmptyBlock.png" style="float: right; margin-top: 2.5%">
+        <p style="position: absolute; top: 50px; left: 160px"><?php echo $userName ?></p>
+
         <?php
 
         ?>
