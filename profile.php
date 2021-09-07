@@ -55,6 +55,10 @@ echo $bio;*/
             <p style="text-align: center"><?php echo $bio; ?></p>
         </div>
 
+
+        <a href="editProfile.php"><div class="editProfile">Edit Bio</div></a>
+
+
         <div class="gameContainer">
             <img id="gameOrder" src="img/emptyTracker.png">
             <img id="gameOrder" src="img/emptyTracker.png">

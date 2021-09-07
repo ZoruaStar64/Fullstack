@@ -78,7 +78,7 @@ p, a{
 @media all and (min-width: 500px) {
     .linkButtons {
         width: 15vw;
-        min-width: 150px;
+        min-width: 200px;
     }
     #profilePicture {
         margin: 0 0 0 20%;
@@ -97,7 +97,7 @@ p, a{
         grid-template-rows: auto;
         grid-gap: 25px;
         grid-template-areas:
-    ". user user . ." /*area where main user things go */
+    ". user user edit ." /*area where main user things go */
     "bio bio bio bio bio" /*area where misc user things go */
     "games games games games games"; /*area where tracked games go*/
 
@@ -134,6 +134,14 @@ p, a{
         width: 10vw;
         margin: 5px 5px 5px 5px;
     }
+    .editProfile {
+        grid-area: edit;
+        border: #6F04BF 15px solid;
+        width: 90%;
+        background-color: #8844D5;
+        text-align: center;
+        margin: 0 0 0 15px;
+    }
 }
 
 @media all and (min-width: 850px) {
@@ -156,7 +164,7 @@ p, a{
         grid-gap: 25px;
         grid-template-areas:
     "user bio bio bio bio" /*area where main user things go */
-    ". . . . ." /*area where misc user things go */
+    "edit . . . ." /*area where misc user things go */
     "games games games games games"; /*area where tracked games go*/
 
 
@@ -192,6 +200,14 @@ p, a{
         width: 10vw;
         margin: 5px 5px 5px 5px;
     }
+    .editProfile {
+        grid-area: edit;
+        border: #6F04BF 15px solid;
+        width: 90%;
+        background-color: #8844D5;
+        text-align: center;
+        margin: 0 0 0 15px;
+    }
 }
 
 @media all and (min-width: 1050px) {
@@ -214,7 +230,7 @@ p, a{
         grid-gap: 25px;
         grid-template-areas:
     "user bio bio bio bio" /*area where main user things go */
-    ". . . . ." /*area where misc user things go */
+    "edit . . . ." /*area where misc user things go */
     "games games games games games"; /*area where tracked games go*/
 
 
@@ -249,6 +265,14 @@ p, a{
         display: inline-block;
         width: 10vw;
         margin: 5px 5px 5px 5px;
+    }
+    .editProfile {
+        grid-area: edit;
+        border: #6F04BF 15px solid;
+        width: 90%;
+        background-color: #8844D5;
+        text-align: center;
+        margin: 0 0 0 15px;
     }
 }
 
@@ -273,7 +297,7 @@ p, a{
         grid-gap: 25px;
         grid-template-areas:
     "user bio bio bio bio" /*area where main user things go */
-    ". . . . ." /*area where misc user things go */
+    "edit . . . ." /*area where misc user things go */
     "games games games games games"; /*area where tracked games go*/
 
 
@@ -308,5 +332,14 @@ p, a{
         display: inline-block;
         width: 10vw;
         margin: 5px 5px 5px 5px;
+    }
+
+    .editProfile {
+        grid-area: edit;
+        border: #6F04BF 15px solid;
+        width: 50%;
+        background-color: #8844D5;
+        text-align: center;
+        margin: 0 0 0 15px;
     }
 }
