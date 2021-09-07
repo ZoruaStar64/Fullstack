@@ -75,50 +75,238 @@ p, a{
     }
 }
 
-.profileContainer {
-    background-color: #6e6ec6;
-    border: #6F04BF solid 10px;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: 25px;
-    grid-template-areas:
+@media all and (min-width: 500px) {
+    .linkButtons {
+        width: 15vw;
+        min-width: 150px;
+    }
+    #profilePicture {
+        margin: 0 0 0 20%;
+    }
+    #name {
+        text-align: center;
+        position: relative;
+        bottom: 63px;
+    }
+
+    .profileContainer {
+        background-color: #6e6ec6;
+        border: #6F04BF solid 10px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 25px;
+        grid-template-areas:
+    ". user user . ." /*area where main user things go */
+    "bio bio bio bio bio" /*area where misc user things go */
+    "games games games games games"; /*area where tracked games go*/
+
+
+        width: 98vw;
+        height: 90vh; /*83 vh old*/
+        margin: 1em 1em 1em 1em;
+    }
+
+    .userContainer {
+        /*display: grid;*/
+        grid-area: user;
+    }
+
+    .bioContainer {
+        grid-area: bio;
+        border: #6F04BF 15px solid;
+        background-color: #8844D5;
+        height: 18vw;
+        margin: 2.4% 1% 0 0;
+    }
+
+    .gameContainer {
+        grid-area: games;
+        border: #6F04BF 15px solid;
+        background-color: #8844D5;
+        height: 90%;
+        margin: 0 1% 2.3% 1%;
+        text-align: center;
+    }
+
+    #gameOrder {
+        display: inline-block;
+        width: 10vw;
+        margin: 5px 5px 5px 5px;
+    }
+}
+
+@media all and (min-width: 850px) {
+    #profilePicture {
+        margin: 0 0 0 20%;
+    }
+    #name {
+        text-align: center;
+        position: relative;
+        bottom: 63px;
+        right: 40px;
+    }
+
+    .profileContainer {
+        background-color: #6e6ec6;
+        border: #6F04BF solid 10px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 25px;
+        grid-template-areas:
     "user bio bio bio bio" /*area where main user things go */
     ". . . . ." /*area where misc user things go */
     "games games games games games"; /*area where tracked games go*/
 
 
-    width: 98vw;
-    height: 83vh;
-    margin: 1em 1em 1em 1em;
+        width: 98vw;
+        height: 90vh; /*83 vh old*/
+        margin: 1em 1em 1em 1em;
+    }
+
+    .userContainer {
+        /*display: grid;*/
+        grid-area: user;
+    }
+
+    .bioContainer {
+        grid-area: bio;
+        border: #6F04BF 15px solid;
+        background-color: #8844D5;
+        height: 18vw;
+        margin: 2.4% 1% 0 0;
+    }
+
+    .gameContainer {
+        grid-area: games;
+        border: #6F04BF 15px solid;
+        background-color: #8844D5;
+        height: 90%;
+        margin: 0 1% 2.3% 1%;
+        text-align: center;
+    }
+
+    #gameOrder {
+        display: inline-block;
+        width: 10vw;
+        margin: 5px 5px 5px 5px;
+    }
 }
 
-.userContainer {
-    /*display: grid;*/
-    grid-area: user;
+@media all and (min-width: 1050px) {
+    #profilePicture {
+        margin: 0 0 0 20%;
+    }
+    #name {
+        text-align: center;
+        position: relative;
+        bottom: 63px;
+        right: 60px;
+    }
+
+    .profileContainer {
+        background-color: #6e6ec6;
+        border: #6F04BF solid 10px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 25px;
+        grid-template-areas:
+    "user bio bio bio bio" /*area where main user things go */
+    ". . . . ." /*area where misc user things go */
+    "games games games games games"; /*area where tracked games go*/
+
+
+        width: 98vw;
+        height: 90vh; /*83 vh old*/
+        margin: 1em 1em 1em 1em;
+    }
+
+    .userContainer {
+        /*display: grid;*/
+        grid-area: user;
+    }
+
+    .bioContainer {
+        grid-area: bio;
+        border: #6F04BF 15px solid;
+        background-color: #8844D5;
+        height: 55%;
+        margin: 2.4% 1% 0 0;
+    }
+
+    .gameContainer {
+        grid-area: games;
+        border: #6F04BF 15px solid;
+        background-color: #8844D5;
+        height: 90%;
+        margin: 0 1% 2.3% 1%;
+        text-align: center;
+    }
+
+    #gameOrder {
+        display: inline-block;
+        width: 10vw;
+        margin: 5px 5px 5px 5px;
+    }
 }
 
-.bioContainer {
-    grid-area: bio;
-    border: #6F04BF 15px solid;
-    background-color: #8844D5;
-    height: 55%;
-    margin: 2.4% 1% 0 0;
+@media all and (min-width: 1290px) {
+    #profilePicture {
+        margin: 0 0 0 0;
+    }
+
+#name {
+    text-align: center;
+    position: relative;
+    bottom: 63px;
+    right: 5px;
 }
 
-.gameContainer {
-    grid-area: games;
-    border: #6F04BF 15px solid;
-    background-color: #8844D5;
-    height: 90%;
-    margin: 0 1% 2.3% 1%;
+    .profileContainer {
+        background-color: #6e6ec6;
+        border: #6F04BF solid 10px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 25px;
+        grid-template-areas:
+    "user bio bio bio bio" /*area where main user things go */
+    ". . . . ." /*area where misc user things go */
+    "games games games games games"; /*area where tracked games go*/
 
-}
 
-#gameOrder {
-    margin: 5px 5px 5px 5px;
-}
+        width: 98vw;
+        height: 90vh; /*83 vh old*/
+        margin: 1em 1em 1em 1em;
+    }
 
-@media all and (min-width: 1200px) {
+    .userContainer {
+        /*display: grid;*/
+        grid-area: user;
+    }
 
+    .bioContainer {
+        grid-area: bio;
+        border: #6F04BF 15px solid;
+        background-color: #8844D5;
+        height: 55%;
+        margin: 2.4% 1% 0 0;
+    }
+
+    .gameContainer {
+        grid-area: games;
+        border: #6F04BF 15px solid;
+        background-color: #8844D5;
+        height: 90%;
+        margin: 0 1% 2.3% 1%;
+        text-align: center;
+    }
+
+    #gameOrder {
+        display: inline-block;
+        width: 10vw;
+        margin: 5px 5px 5px 5px;
+    }
 }

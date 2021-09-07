@@ -35,10 +35,9 @@ echo $bio;*/
 
 <div id="navbar">
     <div class="Shine">
-        <div><a href='index.php'><figure><img src='img/HomeButton.png' alt='Home button'></figure></a></div>
-        <div><a href='#'><figure><img src='img/ProfileButton.png' alt='Profile button'></figure></a></div>
-        <div><a href='#'><figure><img src='img/MainMenuButton.png' alt='main menu button'></figure></a></div>
-        <div><a href='?logout'><figure><img src='img/LogoutButton.png' alt='Logout button'></figure></a></div>
+        <div><a href='index.php'><figure><img class="linkButtons" src='img/HomeButton.png' alt='Home button'></figure></a></div>
+        <div><a href='#'><figure><img class="linkButtons" src='img/MainMenuButton.png' alt='main menu button'></figure></a></div>
+        <div><a href='?logout'><figure><img class="linkButtons" src='img/LogoutButton.png' alt='Logout button'></figure></a></div>
     </div>
 </div>
 <div class="pageContainer">
@@ -49,7 +48,7 @@ echo $bio;*/
         <div class="userContainer">
             <img style="" id="profilePicture" src="<?php echo $profilePicture ?>" alt="Profile Picture">
             <img src="img/EmptyBlock.png" style=" margin: 2.5% 0 0 10px" >
-            <p style="text-align: center; position: relative; bottom: 63px"><?php echo $userName ?></p>
+            <p id="name" ><?php echo $userName ?></p>
         </div>
 
         <div class="bioContainer">
