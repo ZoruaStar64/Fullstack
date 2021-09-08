@@ -2,7 +2,7 @@
 session_start();
 require_once('creds.php');
 global $link;
-
+$showloggedin = false;
 
 
 /*$query = "SELECT * FROM Users";
@@ -44,6 +44,7 @@ if (isset($_POST["createAcc"])) {
     }
     createAccount($link, $emailReg, $nickname, $passwordReg, $gender);
 }
+
 
 
 function createAccount ($link, $emailReg, $nickname, $passwordReg, $gender)
@@ -110,7 +111,56 @@ function inLogFormulier($link) {
 
 }
 
+if (isset($_POST["changeBio"])) {
+
+    $bio = $_POST["changedBio"];
+    $userId = $_POST["hiddenId"];
+    editBio($link, $bio, $userId);
+}
+
+function editBio ($link, $bio, $userId) {
+
+    $queryBio = "UPDATE u3651p69583_tracker.Users SET bio='$bio' WHERE userId='$userId'";
+    $stmt1 = $link->prepare($queryBio);
+    $stmt1->bind_param("s", $bio);
+    if (!$stmt1) {
+        die("mysqli error: " . mysqli_error($link));
+    } else {
+        mysqli_stmt_execute($stmt1);
+
+        echo "Your bio has been changed!";
+        /*echo mysqli_stmt_error($stmt1);*/
+        mysqli_stmt_close($stmt1);
+        header("Location: profile.php?id=$userId");
+    }
+}
+
+if (isset($_POST["changePFP"])) {
+
+    $PFP = $_POST["changedPFP"];
+    $userId = $_POST["hiddenId"];
+    editBio($link, $PFP, $userId);
+}
+
+function editPFP ($link, $PFP, $userId) {
+
+    $queryPFP = "UPDATE u3651p69583_tracker.Users SET profilePicture='$PFP' WHERE userId='$userId'";
+    $stmt1 = $link->prepare($queryPFP);
+    $stmt1->bind_param("s", $PFP);
+    if (!$stmt1) {
+        die("mysqli error: " . mysqli_error($link));
+    } else {
+        mysqli_stmt_execute($stmt1);
+
+        echo "Your bio has been changed!";
+        /*echo mysqli_stmt_error($stmt1);*/
+        mysqli_stmt_close($stmt1);
+        header("Location: profile.php?id=$userId");
+    }
+}
+
 function userCreds() {
+
     $usercreds = [];
     $gender = $_SESSION["user"]["gender"];
     switch ($gender) {

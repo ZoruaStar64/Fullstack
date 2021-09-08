@@ -21,7 +21,7 @@ echo $bio;*/
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="CSS/profile.css">
     <link rel="shortcut icon" href="img/ColoredStar.png">
     <title>Star Game Tracker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +37,7 @@ echo $bio;*/
     <div class="Shine">
         <div><a href='index.php'><figure><img class="linkButtons" src='img/HomeButton.png' alt='Home button'></figure></a></div>
         <div><a href='#'><figure><img class="linkButtons" src='img/MainMenuButton.png' alt='main menu button'></figure></a></div>
-        <div><a href='?logout'><figure><img class="linkButtons" src='img/LogoutButton.png' alt='Logout button'></figure></a></div>
+        <div><a href='index.php?logout'><figure><img class="linkButtons" src='img/LogoutButton.png' alt='Logout button'></figure></a></div>
     </div>
 </div>
 <div class="pageContainer">

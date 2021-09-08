@@ -2,12 +2,18 @@
 session_start();
 
 require_once('creds.php');
+
 $showloggedin = false;
 $profilePicture = "img/notLoggedIn.png";
 $userName = "Not logged in";
 $userId = 0;
 require_once('functions.php');
 /*setcookie("userCookie", $profilePicture, $userId, $userName, time(), "/~/");*/
+
+$details = userCreds();
+$profilePicture = $details["profilePicture"];
+$userName = $details["userName"];
+$bio = $details["bio"];
 
 if (isset($_GET["logout"])) {
     /*session_start();*/
@@ -19,7 +25,7 @@ if (isset($_GET["logout"])) {
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="mainMenu.css">
+    <link rel="stylesheet" href="CSS/home.css">
     <link rel="shortcut icon" href="img/ColoredStar.png">
     <title>Star Game Tracker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +61,12 @@ if ($showloggedin == false) {
     <?php
 }
 if ($showloggedin == true) {
-    ?>  <div><a href='profile.php?id=<?php echo $userId ?>'><figure><img src='img/ProfileButton.png' alt='Profile button'></figure></a></div>
+    $details = userCreds();
+    $profilePicture = $details["profilePicture"];
+    $userName = $details["userName"];
+    $bio = $details["bio"];
+
+    ?><div><a href='profile.php?id=<?php echo $userId ?>'><figure><img src='img/ProfileButton.png' alt='Profile button'></figure></a></div>
         <div><a href='?logout'><figure><img src='img/LogoutButton.png' alt='Logout button'></figure></a></div>
     <?php
 }

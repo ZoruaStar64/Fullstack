@@ -76,6 +76,7 @@ p, a{
 }
 
 @media all and (min-width: 500px) {
+
     .linkButtons {
         width: 15vw;
         min-width: 200px;
