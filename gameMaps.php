@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
 </head>
 <body>
-<p>this page is to select<br>
-    wether or not you want to track game maps or just a game checklist</p>
+<p>this page is to select a game out of a list to track</p>
 </body>
 </html>
