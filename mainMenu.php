@@ -14,6 +14,6 @@
 </head>
 <body>
 <p>this page is to select<br>
-    wether or not you want to track game maps or just a game checklist</p>
+    either if you want to track game maps or just a game checklist</p>
 </body>
 </html>
