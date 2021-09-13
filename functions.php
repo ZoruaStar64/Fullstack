@@ -88,6 +88,7 @@ function inLogFormulier($link) {
         $trueWachtwoord = $arraytable['password'];
         $gender = $arraytable['gender'];
         $bio = $arraytable['bio'];
+        $profilePicture = $arraytable['profilePicture'];
     }
 
     if (isset($_POST['login'])
@@ -98,7 +99,9 @@ function inLogFormulier($link) {
             "name" => $nick,
             "wachtwoord" => $trueWachtwoord,
             "gender" => $gender,
-            "bio" => $bio);
+            "bio" => $bio,
+            "PFP" => $profilePicture);
+
 
         $usercreds = userCreds();
         $profilePicture = $usercreds['profilePicture'];
@@ -135,12 +138,12 @@ function editBio ($link, $bio, $userId) {
     }
 }
 
-if (isset($_POST["changePFP"])) {
+/*if (isset($_POST["changePFP"])) {
 
     $PFP = $_POST["changedPFP"];
     $userId = $_POST["hiddenId"];
-    editBio($link, $PFP, $userId);
-}
+    editPFP($link, $PFP, $userId);
+}*/
 
 function editPFP ($link, $PFP, $userId) {
 
@@ -162,20 +165,29 @@ function editPFP ($link, $PFP, $userId) {
 function userCreds() {
 
     $usercreds = [];
-    $gender = $_SESSION["user"]["gender"];
-    switch ($gender) {
-        case "male":
-            $usercreds['profilePicture'] = "img/IconMan.png";
-            break;
-        case "female":
-            $usercreds['profilePicture'] = "img/IconWoman.png";
-            break;
-        case "secret":
-            $usercreds['profilePicture'] = "img/UnknownGender.png";
-            break;
-        default:
-            $usercreds['profilePicture'] = "img/notLoggedIn.png";
+    $profilePicture = $_SESSION["user"]["PFP"];
+    /*JSC($profilePicture);*/
+    if (!empty($profilePicture)) {
+
+        $usercreds['profilePicture'] = $profilePicture;
     }
+    else {
+        $gender = $_SESSION["user"]["gender"];
+        switch ($gender) {
+            case "male":
+                $usercreds['profilePicture'] = "img/IconMan.png";
+                break;
+            case "female":
+                $usercreds['profilePicture'] = "img/IconWoman.png";
+                break;
+            case "secret":
+                $usercreds['profilePicture'] = "img/UnknownGender.png";
+                break;
+            default:
+                $usercreds['profilePicture'] = "img/notLoggedIn.png";
+        }
+    }
+
 
     $usercreds['userName'] = $_SESSION["user"]["name"];
     $usercreds['userId'] = $_SESSION["user"]["userId"];

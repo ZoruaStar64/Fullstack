@@ -81,7 +81,11 @@ p, a{
         width: 15vw;
         min-width: 200px;
     }
-    #profilePicture {
+    #profilePictureContainer {
+        background-color: #6e6ec6;
+        border: #6F04BF solid 10px;
+        width: 120px;
+        height: 120px;
         margin: 0 0 0 20%;
     }
     #name {
@@ -146,7 +150,11 @@ p, a{
 }
 
 @media all and (min-width: 850px) {
-    #profilePicture {
+    #profilePictureContainer {
+        background-color: #6e6ec6;
+        border: #6F04BF solid 10px;
+        width: 120px;
+        height: 120px;
         margin: 0 0 0 20%;
     }
     #name {
@@ -212,9 +220,14 @@ p, a{
 }
 
 @media all and (min-width: 1050px) {
-    #profilePicture {
+    #profilePictureContainer {
+        background-color: #6e6ec6;
+        border: #6F04BF solid 10px;
+        width: 120px;
+        height: 120px;
         margin: 0 0 0 20%;
     }
+
     #name {
         text-align: center;
         position: relative;
@@ -278,7 +291,11 @@ p, a{
 }
 
 @media all and (min-width: 1290px) {
-    #profilePicture {
+    #profilePictureContainer {
+        background-color: #6e6ec6;
+        border: #6F04BF solid 10px;
+        width: 120px;
+        height: 120px;
         margin: 0 0 0 0;
     }
 
@@ -286,7 +303,7 @@ p, a{
     text-align: center;
     position: relative;
     bottom: 63px;
-    right: 5px;
+    right: 100px;
 }
 
     .profileContainer {

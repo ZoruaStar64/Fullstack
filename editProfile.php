@@ -17,7 +17,8 @@ $bio = $details["bio"];
 echo "Change your Bio with this textbox here!";
 
 ?>
-<form id="changeBio" action='<?php echo htmlspecialchars($_SERVER['profile.php']); ?>' method='POST'>
+
+<form id="changeBio" action='<?php  echo htmlspecialchars($_SERVER['profile.php']); ?>' method='POST'>
 
     <div>
         new Bio : <input type='text' name='changedBio' value='' required>
@@ -28,11 +29,11 @@ echo "Change your Bio with this textbox here!";
 </form>
 
 <br>
-<p>Don't attempt to change your profile picture yet<br>
-cause i still need to get the code working for<br>
-uploading the files to the database and<br>
-selecting it over your selected gender's pfp</p>
-<form id="changePFP" action='<?php echo htmlspecialchars($_SERVER['profile.php']); ?>' method='POST'>
+<p>You can only submit jpg, jpeg, png and gif files<br>
+make sure there aren't any spaces in the file name<br>
+Instead of space use either - or _</p>
+
+<form id="changePFP" action='test.php' method='POST' enctype="multipart/form-data">
 
     <div>
        click the button below and input either a jpg or png file! <br>

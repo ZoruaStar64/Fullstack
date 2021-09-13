@@ -46,7 +46,9 @@ echo $bio;*/
 
 
         <div class="userContainer">
-            <img style="" id="profilePicture" src="<?php echo $profilePicture ?>" alt="Profile Picture">
+            <div id="profilePictureContainer">
+            <img style="" id="profilePicture" src="<?php echo $profilePicture ?>" width="100px" height="100px" alt="Profile Picture">
+        </div>
             <img src="img/EmptyBlock.png" style=" margin: 2.5% 0 0 10px" >
             <p id="name" ><?php echo $userName ?></p>
         </div>
