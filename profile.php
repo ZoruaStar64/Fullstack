@@ -30,20 +30,16 @@ echo $bio;*/
 </head>
 <body>
 
-
-
-
 <div id="navbar">
     <div class="Shine">
         <div><a href='index.php'><figure><img class="linkButtons" src='img/HomeButton.png' alt='Home button'></figure></a></div>
-        <div><a href='#'><figure><img class="linkButtons" src='img/MainMenuButton.png' alt='main menu button'></figure></a></div>
+        <div><a href='mainMenu.php'><figure><img class="linkButtons" src='img/MainMenuButton.png' alt='main menu button'></figure></a></div>
         <div><a href='index.php?logout'><figure><img class="linkButtons" src='img/LogoutButton.png' alt='Logout button'></figure></a></div>
     </div>
 </div>
 <div class="pageContainer">
 
     <div class="profileContainer">
-
 
         <div class="userContainer">
             <div id="profilePictureContainer">
