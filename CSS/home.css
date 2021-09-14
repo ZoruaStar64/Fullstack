@@ -26,18 +26,21 @@ html {
 }
 
 .pageContainer {
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-gap: 25px;
     grid-template-areas:
-    "userBox logo registerForm"
-    "userBox buttonContainer registerForm "
-    "userBox buttonContainer loginForm"
-    "userBox buttonContainer loginForm ";
+    "userBox logo ."
+    "registerForm buttonContainer ."
+    "registerForm buttonContainer ."
+    "loginForm buttonContainer .";
 }
 
 #pageLogo {
+    width: 90vh;
+
     margin-top: 50px;
     grid-area: logo;
 }
@@ -103,7 +106,9 @@ input {
     border-bottom: 5px solid #6F04BF;
     margin-top: 2%;
 }
-
+#registerButton {
+    cursor: pointer;
+}
 #registerForm {
     font-size: 20px;
     height: 50%;
@@ -124,6 +129,9 @@ input {
     border-radius: 50%;
 }
 
+#loginButton {
+    cursor: pointer;
+}
 #loginForm {
     font-size: 20px;
     height: 80%;
