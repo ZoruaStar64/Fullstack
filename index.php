@@ -83,19 +83,19 @@ echo "</div>"
 
     <form id="registerForm" style="display: none" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>' method='POST'>
         <div class="inputContainer">
-        Email &emsp;&ensp;&nbsp;: <input type='text' name='emailReg' value='' required>
+            <label>Email</label> &emsp;&ensp;&nbsp;: <input type='text' name='emailReg' value='' required>
         </div>
 
         <div class="inputContainer">
-        Password &nbsp;: <input type='text' name='passwordReg' value='' required>
+            <label>Password</label> &nbsp;: <input type='text' name='passwordReg' value='' required>
         </div>
 
         <div class="inputContainer">
-        Nickname : <input type='text' name='nickname' value='' required>
+            <label>Nickname</label> : <input type='text' name='nickname' value='' required>
         </div>
 
         <div class="inputContainer">
-            Gender : <select style="width: 50%; margin-left: 12%" name="gender[]" multiple="multiple" required>
+            <label>Gender</label> : <select style="width: 50%; margin-left: 12%" name="gender[]" multiple="multiple" required>
                 <option value="male" >Male</option>
                 <option value="female">Female</option>
                 <!--<option value="neutral">GenderNeutral</option>-->
@@ -112,11 +112,11 @@ echo "</div>"
     <form id="loginForm" style="display: none" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>' method='POST'>
 
         <div class="inputContainer">
-            Email &emsp;&ensp;&nbsp;: <input type='text' name='emailLogin' value=''>
+            <label>Email</label>  &emsp;&ensp;&nbsp;: <input type='text' name='emailLogin' value=''>
         </div>
-        <br>
+
         <div class="inputContainer">
-            Password &nbsp;: <input type='password' name='passwordLogin' value=''>
+            <label>Password</label> &nbsp;: <input type='password' name='passwordLogin' value=''>
         </div>
 
         <input id="ActualLoginButton" type='submit' name='login' value='Login'>
