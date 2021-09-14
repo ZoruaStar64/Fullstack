@@ -18,6 +18,11 @@ $bio = $details["bio"];
 if (isset($_GET["logout"])) {
     /*session_start();*/
     $_SESSION = array();
+    $details = array();
+    $profilePicture = "img/notLoggedIn.png";
+    $userName = "Not logged in";
+    $userId = 0;
+    $bio = "";
     session_destroy();
 }
 
@@ -52,10 +57,10 @@ if (isset($_GET["logout"])) {
 <?php
 
 echo "<div class='Shine'>";
-echo "<div><a href='#'><figure><img src='img/MainMenuButton.png' alt='main menu button'></figure></a></div>";
+
 if ($showloggedin == false) {
-    ?>  <div id='registerButton'><a href='#'><figure><img src='img/Register.png' alt='Register button'></figure></a></div>
-        <div id='loginButton'><a href='#'><figure><img src='img/LoginButton.png' alt='Login button'></figure></a></div>
+    ?>  <div id='registerButton'><figure><img src='img/Register.png' alt='Register button'></figure></div>
+        <div id='loginButton'><figure><img src='img/LoginButton.png' alt='Login button'></figure></div>
         <div><a href='?logout'><figure><img src='img/LogoutButton.png' alt='Logout button'></figure></a></div>
 
     <?php
@@ -66,17 +71,17 @@ if ($showloggedin == true) {
     $userName = $details["userName"];
     $bio = $details["bio"];
 
-    ?><div><a href='profile.php?id=<?php echo $userId ?>'><figure><img src='img/ProfileButton.png' alt='Profile button'></figure></a></div>
+    ?><div><a href='mainMenu.php'><figure><img src='img/MainMenuButton.png' alt='main menu button'></figure></a></div>
+    <div><a href='profile.php?id=<?php echo $userId ?>'><figure><img src='img/ProfileButton.png' alt='Profile button'></figure></a></div>
         <div><a href='?logout'><figure><img src='img/LogoutButton.png' alt='Logout button'></figure></a></div>
     <?php
 }
 
-echo $creationMessage;
 echo "</div>"
 
 ?>
 
-    <form id="registerForm" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>' method='POST'>
+    <form id="registerForm" style="display: none" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>' method='POST'>
         <div class="inputContainer">
         Email &emsp;&ensp;&nbsp;: <input type='text' name='emailReg' value='' required>
         </div>
@@ -104,7 +109,7 @@ echo "</div>"
     </form>
     <br>
 
-    <form id="loginForm" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>' method='POST'>
+    <form id="loginForm" style="display: none" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>' method='POST'>
 
         <div class="inputContainer">
             Email &emsp;&ensp;&nbsp;: <input type='text' name='emailLogin' value=''>

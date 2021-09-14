@@ -56,7 +56,7 @@ async function logoAnimation() {
 
 
 
-registerButton.addEventListener('click', showRegisterForm);
+
 function showRegisterForm() {
     if (registerForm.style.display === 'none') {
         registerForm.style.display = 'block';
@@ -65,8 +65,8 @@ function showRegisterForm() {
         registerForm.style.display = 'none';
     }
 }
+registerButton.addEventListener('click', showRegisterForm);
 
-loginButton.addEventListener('click', showLoginForm);
 function showLoginForm() {
     if (loginForm.style.display === 'none') {
         loginForm.style.display = 'block';
@@ -75,4 +75,4 @@ function showLoginForm() {
         loginForm.style.display = 'none';
     }
 }
-
+loginButton.addEventListener('click', showLoginForm);
