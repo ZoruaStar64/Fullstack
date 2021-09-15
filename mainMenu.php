@@ -24,6 +24,27 @@
 
 <div class="pageContainer">
 
+    <div id="row1">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+    </div>
+    <div id="row2">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+    </div>
+    <div id="row3">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+    </div>
 
 </div>
 

@@ -83,10 +83,32 @@ html {
     grid-template-rows: auto;
     grid-gap: 25px;
     grid-template-areas:
-    ". . . . .";
+    ". . . . ."
+    "row1 row1 row1 row1 row1"
+    "row2 row2 row2 row2 row2"
+    "row3 row3 row3 row3 row3";
 
     width: 98vw;
     height: 90vh; /*83 vh old*/
     margin: 1em;
 }
 
+#row1 {
+    text-align: center;
+    grid-area: row1;
+    margin-left: 10%;
+}
+#row2 {
+    text-align: center;
+    grid-area: row2;
+    margin-left: 10%;
+}
+#row3 {
+    text-align: center;
+    grid-area: row3;
+    margin-left: 10%;
+}
+
+.seperate {
+    margin: 0 10% 0 0;
+}
