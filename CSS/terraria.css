@@ -6,13 +6,13 @@
 
 p, h1 {
     font-family: 'Saira Stencil One', cursive;
-    font-size: 30px;
+    font-size: 20px;
     color: #f3d400;
 
 }
 
 html {
-    background-color: #32ce00;
+    background-color: #ac1616;
     text-align: center;
 }/*#F7E8FD*/
 
@@ -76,37 +76,35 @@ html {
     }
 }
 
-.pageContainer {
+.pageContainer1 {
     background-color: #25d015;
     border: #268b00 solid 10px;
     text-align: center;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
 
     grid-template-areas:
-    "TS TS TS TS TS"
-    ""
-    ""
-    "";
+    "TS TS TS TS TS TS";
 
     width: 98vw;
-     /*83, 90 vh old*/
+    height: auto; /*83, 90 vh old*/
     margin: 1em;
 }
 
 
 .Terraspark {
+    float: left;
     text-align: center;
     display: grid;
     grid-area: TS;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 50px auto auto;
-    grid-gap: 25px;
+    grid-gap: 10px;
     grid-template-areas:
     ". . TST TST . ."
-    "FS FS . . LW LW"
-    "FS FS TS TS LW LW";
+    ". FS . . LW ."
+    ". FS TS TS LW .";
 
 
     width: 94vw;
@@ -128,4 +126,63 @@ html {
 
 #createTerraSpark {
     grid-area: TS;
+}
+
+.pageContainer2 {
+    background-color: #25d015;
+    border: #268b00 solid 10px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+
+    grid-template-areas:
+    "CP CP CP CP CP CP";
+
+    width: 98vw;
+    height: auto; /*83, 90 vh old*/
+    margin: 1em;
+}
+
+.Cellphone {
+
+    display: grid;
+    grid-area: CP;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px auto auto auto;
+    grid-gap: 10px;
+    grid-template-areas:
+    ". CT CT ."
+    "GPS REK GT FF"
+    "GPS REK GT FF"
+    ". P P .";
+
+
+
+    height: 80vh; /*83 vh old*/
+    margin: 1em;
+}
+
+#cellphoneTitle {
+    grid-area: CT;
+}
+
+#createGPS {
+    grid-area: GPS;
+}
+
+#createREK3K {
+    grid-area: REK;
+}
+
+#createGoblinTech {
+    grid-area: GT;
+}
+
+#createFishFinder {
+    grid-area: FF;
+}
+
+#createPhone {
+    grid-area: P;
 }

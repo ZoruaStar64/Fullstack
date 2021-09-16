@@ -22,8 +22,7 @@
     </div>
 </div>
 
-<div class="pageContainer">
-
+<div class="pageContainer1">
 
     <div class="Terraspark">
         <h1 id="terraSparkTitle">Terraspark</h1>
@@ -38,15 +37,15 @@
                 or
                 <img src="terrariaImg/Flurry_Boots.png" alt="Flurry Boots">
                 + <img src="terrariaImg/Rocket_Boots.png" alt="Rocket Boots">
-                <br> = <br>
+                <br> = <img src="terrariaImg/Spectre_Boots.png" alt="Spectre Boots"> <br>
                  <img src="terrariaImg/Aglet.png" alt="Aglet">
                 + <img src="terrariaImg/Spectre_Boots.png" alt="Spectre Boots">
                 + <img src="terrariaImg/Anklet_of_the_Wind.png" alt="Anklet of the Wind">
-                <br> = <br>
+                <br> = <img src="terrariaImg/Lightning_Boots.png" alt="Lightning Boots"> <br>
                 <img src="terrariaImg/Lightning_Boots.png" alt="Lightning Boots">
                 + <img src="terrariaImg/Ice_Skates.png" alt="Ice Skates">
-                <br> = <br>
-                <img src="terrariaImg/Frostspark_Boots.png" alt="Frostspark Boots">
+                <br> = <img src="terrariaImg/Frostspark_Boots.png" alt="Frostspark Boots">
+
             </p>
         </div>
 
@@ -77,6 +76,88 @@
 
 
 </div>
+
+
 </div>
+<div class="pageContainer2">
+    <div class="Cellphone">
+        <h1 id="cellphoneTitle">Cellphone</h1>
+        <div id="createGPS">
+            <p>
+        <img src="terrariaImg/Platinum_Bar.png" alt="Platinum Bar">
+            + <img src="terrariaImg/Chain.png" alt="Chain">
+            || <img src="terrariaImg/Gold_Bar.png" alt="Gold Bar">
+            + <img src="terrariaImg/Chain.png" alt="Chain">
+            <br><img src="terrariaImg/Platinum_Watch.png" alt="Platinum Watch">
+            = <img src="terrariaImg/Gold_Watch.png" alt="Gold Watch"> <br>
+                <img src="terrariaImg/Depth_Meter.png" alt="Depth Meter">
+                + <img src="terrariaImg/Platinum_Watch.png" alt="Platinum Watch">
+                or <img src="terrariaImg/Gold_Watch.png" alt="Gold Watch">
+                + <img src="terrariaImg/Compass.png" alt="Compass">
+                <br> = <br> <img src="terrariaImg/GPS.png" alt="GPS">
+            </p>
+        </div>
+        <div id="createREK3K">
+            <p>
+        <img src="terrariaImg/Radar.png" alt="Radar">
+            <br> + <br>
+            <img src="terrariaImg/Tally_Counter.png" alt="Tally counter">
+            <br> + <br>
+            <img src="terrariaImg/Lifeform_Analyzer.png" alt="Lifeform Analyzer">
+            <br> = <br>
+            <img src="terrariaImg/R.E.K._3000.png" alt="R.E.K.3000">
+            </p>
+        </div>
+        <div id="createGoblinTech">
+        <p>
+            <img src="terrariaImg/DPS_Meter.png" alt="DPS Meter">
+            <br> + <br>
+            <img src="terrariaImg/Stopwatch.png" alt="Stopwatch">
+            <br> + <br>
+            <img src="terrariaImg/Metal_Detector.png" alt="Metal Detector">
+            <br> = <br>
+            <img src="terrariaImg/Goblin_Tech.png" alt="Goblin Tech">
+        </p>
+        </div>
+        <div id="createFishFinder">
+            <p>
+                <img src="terrariaImg/Fishermans_Pocket_Guide.png" alt="Fisherman's Pocket Guide">
+                <br> + <br>
+                <img src="terrariaImg/Weather_Radio.png" alt="Weather Radio">
+                <br> + <br>
+                <img src="terrariaImg/Sextant.png" alt="Sextant">
+                <br> = <br>
+                <img src="terrariaImg/Fish_Finder.png" alt="Fish Finder">
+            </p>
+        </div>
+        <div id="createPhone">
+            <p>
+            <img src="terrariaImg/GPS.png" alt="GPS">
+            +
+            <img src="terrariaImg/R.E.K._3000.png" alt="R.E.K.3000">
+            +
+            <img src="terrariaImg/Goblin_Tech.png" alt="Goblin Tech">
+            +
+            <img src="terrariaImg/Fish_Finder.png" alt="Fish Finder">
+            <br> = <br>
+            <img src="terrariaImg/PDA.png" alt="PDA">
+            <br>
+            <img src="terrariaImg/Magic_Mirror.png" alt="Magic Mirror">
+            or
+            <img src="terrariaImg/Ice_Mirror.png" alt="Ice Mirror">
+            + <img src="terrariaImg/PDA.png" alt="PDA">
+            <br> = <br>
+            <img src="terrariaImg/Cell_Phone.png" alt="Cellphone">
+            </p>
+        </div>
+    </div>
+</div>
+<!--<script>
+    const pageContainerElement = document.querySelector('.pageContainer').cloneNode(true);
+
+    const bodyElement = document.querySelector('body');
+    bodyElement.insertAdjacentElement("beforeend", pageContainerElement);
+
+</script>-->
 </body>
 </html>
