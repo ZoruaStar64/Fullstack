@@ -4,16 +4,16 @@
     box-sizing: border-box;
 }
 
-p {
+p, h1 {
     font-family: 'Saira Stencil One', cursive;
-    font-size: 25px;
+    font-size: 30px;
     color: #f3d400;
 
 }
 
 html {
-    background-color: #DAB9E3;
-
+    background-color: #32ce00;
+    text-align: center;
 }/*#F7E8FD*/
 
 /* return of the navbar */
@@ -77,43 +77,55 @@ html {
 }
 
 .pageContainer {
-    background-color: #6e6ec6;
-    border: #6F04BF solid 10px;
+    background-color: #25d015;
+    border: #268b00 solid 10px;
+    text-align: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-gap: 25px;
+
     grid-template-areas:
-    ". . . . ."
-    "row1 row1 row1 row1 row1"
-    "row2 row2 row2 row2 row2"
-    "row3 row3 row3 row3 row3";
+    "TS TS TS TS TS"
+    ""
+    ""
+    "";
 
     width: 98vw;
-    height: 90vh; /*83 vh old*/
+     /*83, 90 vh old*/
     margin: 1em;
 }
 
-#row1 {
+
+.Terraspark {
     text-align: center;
-    grid-area: row1;
-    margin-left: 10%;
-}
-#row1 a {
+    display: grid;
+    grid-area: TS;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px auto auto;
+    grid-gap: 25px;
+    grid-template-areas:
+    ". . TST TST . ."
+    "FS FS . . LW LW"
+    "FS FS TS TS LW LW";
 
 
-}
-#row2 {
-    text-align: center;
-    grid-area: row2;
-    margin-left: 10%;
-}
-#row3 {
-    text-align: center;
-    grid-area: row3;
-    margin-left: 10%;
+    width: 94vw;
+    height: 80vh; /*83 vh old*/
+    margin: 1em;
 }
 
-.seperate {
-    margin: 0 10% 0 0;
+#terraSparkTitle {
+    grid-area: TST;
+}
+
+#createFrostspark {
+    grid-area: FS;
+}
+
+#createLavaWaders {
+    grid-area: LW;
+}
+
+#createTerraSpark {
+    grid-area: TS;
 }
