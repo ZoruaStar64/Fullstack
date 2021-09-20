@@ -152,6 +152,98 @@
         </div>
     </div>
 </div>
+
+<div class="pageContainer3">
+    <div class="AnkhShield">
+        <h1 id="ankhShieldTitle">Ankh Shield</h1>
+        <div id="obsidianShield">
+            <p>
+                <img src="terrariaImg/Obsidian.png" alt="Obsidian"> x 20
+                 = <img src="terrariaImg/Obsidian_Skull.png" alt="Obsidian Skull"><br>
+                <img src="terrariaImg/Obsidian_Skull.png" alt="Obsidian Skull">
+                + <img src="terrariaImg/Cobalt_Shield.png" alt="Cobalt Shield">
+                 =
+                <img src="terrariaImg/Obsidian_Shield.png" alt="Obsidian Shield">
+            </p>
+        </div>
+
+        <div id="blindFold">
+            <p>
+        <img src="terrariaImg/Blindfold.png" alt="Blindfold">
+            </p>
+        </div>
+
+        <div id="armorBracing">
+            <p>
+                <img src="terrariaImg/Vitamins.png" alt="Vitamins">
+                +
+                <img src="terrariaImg/Armor_Polish.png" alt="Armor Polish">
+                <br> = <br>
+                <img src="terrariaImg/Armor_Bracing.png" alt="Armor Bracing">
+            </p>
+        </div>
+
+        <div id="medicatedBandage">
+            <p>
+                <img src="terrariaImg/Adhesive_Bandage.png" alt="Adhesive Bandage">
+                +
+                <img src="terrariaImg/Bezoar.png" alt="Bezoar">
+                <br> = <br>
+                <img src="terrariaImg/Medicated_Bandage.png" alt="Medicated Bandage">
+            </p>
+        </div>
+
+        <div id="counterCurse">
+            <p>
+                <img src="terrariaImg/Nazar.png" alt="Nazar">
+                +
+                <img src="terrariaImg/Megaphone.png" alt="Megaphone">
+                <br> = <br>
+                <img src="terrariaImg/Countercurse_Mantra.png" alt="Countercurse Mantra">
+            </p>
+        </div>
+
+        <div id="thePlan">
+            <p>
+                <img src="terrariaImg/Trifold_Map.png" alt="Trifold Map">
+                +
+                <img src="terrariaImg/Fast_Clock.png" alt="Fast Clock">
+                <br> = <br>
+                <img src="terrariaImg/The_Plan.png" alt="The Plan">
+            </p>
+        </div>
+
+        <div id="createAnkhCharm">
+            <p>
+                <img src="terrariaImg/Blindfold.png" alt="Blindfold">
+                + <img src="terrariaImg/Armor_Bracing.png" alt="Armor Bracing">
+                + <img src="terrariaImg/Medicated_Bandage.png" alt="Medicated Bandage">
+                + <img src="terrariaImg/Countercurse_Mantra.png" alt="Countercurse Mantra">
+                + <img src="terrariaImg/The_Plan.png" alt="The Plan">
+                <br> = <br>
+                <img src="terrariaImg/Ankh_Charm.png" alt="Ankh Charm">
+            </p>
+        </div>
+
+        <div id="createAnkhShield">
+            <p>
+            <img src="terrariaImg/Obsidian_Shield.png" alt="Obsidian Shield">
+            +
+            <img src="terrariaImg/Ankh_Charm.png" alt="Ankh Charm">
+            <br> = <br>
+            <img src="terrariaImg/Ankh_Shield.png" alt="Ankh Shield">
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="pageContainer4">
+    <div class="Zenith">
+        <h1 id="zenithTitle">Zenith</h1>
+
+    </div>
+</div>
+
 <!--<script>
     const pageContainerElement = document.querySelector('.pageContainer').cloneNode(true);
 
