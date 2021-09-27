@@ -68,6 +68,6 @@ echo $bio;*/
     </div>
 
 </div>
-<script src="profile.js"></script>
+<script src="JS/profile.js"></script>
 </body>
 </html>

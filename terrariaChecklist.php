@@ -27,50 +27,35 @@
     <div class="Terraspark">
         <h1 id="terraSparkTitle">Terraspark</h1>
 
+        <div id="itemCraftGuideBar1">
+
+
+        </div>
         <div id="createFrostspark">
             <p>
-                <img src="terrariaImg/Sailfish_Boots.png" alt="Sailfish Boots">
-                or
-                <img src="terrariaImg/Hermes_Boots.png" alt="Hermes Boots">
-                or
-                <img src="terrariaImg/Dunerider_Boots.png" alt="Dunerider Boots">
-                or
-                <img src="terrariaImg/Flurry_Boots.png" alt="Flurry Boots">
-                + <img src="terrariaImg/Rocket_Boots.png" alt="Rocket Boots">
-                <br> = <img src="terrariaImg/Spectre_Boots.png" alt="Spectre Boots"> <br>
-                 <img src="terrariaImg/Aglet.png" alt="Aglet">
-                + <img src="terrariaImg/Spectre_Boots.png" alt="Spectre Boots">
-                + <img src="terrariaImg/Anklet_of_the_Wind.png" alt="Anklet of the Wind">
-                <br> = <img src="terrariaImg/Lightning_Boots.png" alt="Lightning Boots"> <br>
-                <img src="terrariaImg/Lightning_Boots.png" alt="Lightning Boots">
-                + <img src="terrariaImg/Ice_Skates.png" alt="Ice Skates">
-                <br> = <img src="terrariaImg/Frostspark_Boots.png" alt="Frostspark Boots">
+
+                 <img id="spectreBoots" src="terrariaImg/Spectre_Boots.png" alt="Spectre Boots"> <br>
+
+                 <img id="lightningBoots" src="terrariaImg/Lightning_Boots.png" alt="Lightning Boots"> <br>
+
+                 <img id="frostsparkBoots" src="terrariaImg/Frostspark_Boots.png" alt="Frostspark Boots">
 
             </p>
         </div>
 
         <div id="createTerraSpark">
             <p>
-                <img src="terrariaImg/Frostspark_Boots.png" alt="Frostspark Boots">
-                +
-                <img src="terrariaImg/Lava_Waders.png" alt="Lava Waders">
-                <br> = <br>
                 <img src="terrariaImg/Terraspark_Boots.png" alt="Terraspark Boots">
             </p>
         </div>
 
     <div id="createLavaWaders">
         <p>
-        <img src="terrariaImg/Obsidian.png" alt="Obsidian"> x 20
-            <br> = <br>
-            <img src="terrariaImg/Obsidian_Skull.png" alt="Obsidian Skull">
-            + <img src="terrariaImg/Lava_Charm.png" alt="Lava Charm">
-            <br> = <br>
-            <img src="terrariaImg/Obsidian_Rose.png" alt="Obsidian Rose">
-            + <img src="terrariaImg/Molten_Charm.png" alt="Molten Charm">
-            + <img src="terrariaImg/Water_Walking_Boots.png" alt="Water Walking Boots">
-            <br> = <br>
-            <img src="terrariaImg/Lava_Waders.png" alt="Lava Waders">
+            <img id="obsidianSkull" src="terrariaImg/Obsidian_Skull.png" alt="Obsidian Skull">
+            <br>
+            <img id="moltenCharm" src="terrariaImg/Molten_Charm.png" alt="Molten Charm">
+            <br>
+            <img id="lavaWaders" src="terrariaImg/Lava_Waders.png" alt="Lava Waders">
         </p>
     </div>
 
@@ -244,12 +229,6 @@
     </div>
 </div>
 
-<!--<script>
-    const pageContainerElement = document.querySelector('.pageContainer').cloneNode(true);
-
-    const bodyElement = document.querySelector('body');
-    bodyElement.insertAdjacentElement("beforeend", pageContainerElement);
-
-</script>-->
+<script src="JS/terraria.js"></script>
 </body>
 </html>

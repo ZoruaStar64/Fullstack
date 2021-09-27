@@ -127,7 +127,7 @@ echo "</div>"
 
     ?>
 
-<script src="home.js"></script>
+<script src="JS/home.js"></script>
 </div>
 </body>
 </html>

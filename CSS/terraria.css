@@ -14,11 +14,19 @@ img {
     padding: 0;
 }
 
-p, h1 {
+p {
     font-family: 'Saira Stencil One', cursive;
-    font-size: 20px;
-    color: #f3d400;
+    font-size: 15px;
+    color: #0007a1;
 
+}
+
+h1 {
+    border: #0007a1 5px solid;
+    height: 50px;
+    font-family: 'Saira Stencil One', cursive;
+    color: #0007a1;
+    background-color: #00cbff;
 }
 
 html {
@@ -91,11 +99,11 @@ html {
     border: #268b00 solid 10px;
     text-align: center;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
 
     grid-template-areas:
-    "TS TS TS TS TS TS";
+    "TS TS TS TS TS";
 
     width: 98vw;
     height: auto; /*83, 90 vh old*/
@@ -108,23 +116,66 @@ html {
     text-align: center;
     display: grid;
     grid-area: TS;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 50px auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: /*50px*/auto auto auto;
     grid-gap: 10px;
     grid-template-areas:
-    ". . TST TST . ."
-    ". FS . . LW ."
-    ". FS TS TS LW .";
+    "CraftGuide1 . TST . ."
+    "CraftGuide1 FS .  LW ."
+    "CraftGuide1 FS TS LW .";
 
 
     width: 94vw;
     height: 80vh; /*83 vh old*/
-    margin: 1em;
+    margin: 1em 0 1em 0;
 }
 
 #terraSparkTitle {
     grid-area: TST;
 }
+
+#itemCraftGuideBar1 {
+    grid-area: CraftGuide1;
+    background-color: #00cbff;
+    border: #005d7a 5px solid;
+    margin: 0;
+    text-align: start;
+
+}
+
+.alignTriangle {
+    display: grid;
+    width: 70px;
+    grid-template-columns: 35px 35px;
+    grid-template-rows: auto;
+    grid-template-areas:
+            "TriangleP1 TriangleP2"
+            "TriangleP1 TriangleP2";
+}
+#triangleP1 {
+    grid-area: TriangleP1;
+}
+#triangleP2 {
+    grid-area: TriangleP2;
+    align-self: center;
+}
+
+.alignSquare {
+    display: grid;
+    width: 70px;
+    grid-template-columns: 35px 35px;
+    grid-template-rows: auto;
+    grid-template-areas:
+            "SquareP1 SquareP2"
+            "SquareP1 SquareP2";
+}
+#squareP1 {
+    grid-area: SquareP1;
+}
+#squareP2 {
+    grid-area: SquareP2;
+}
+
 
 #createFrostspark {
     grid-area: FS;
