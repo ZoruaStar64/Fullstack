@@ -45,7 +45,7 @@
 
         <div id="createTerraSpark">
             <p>
-                <img src="terrariaImg/Terraspark_Boots.png" alt="Terraspark Boots">
+                <img id="terraSpark" src="terrariaImg/Terraspark_Boots.png" alt="Terraspark Boots">
             </p>
         </div>
 
