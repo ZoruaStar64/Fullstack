@@ -94,6 +94,13 @@ html {
     }
 }
 
+.craftGuideStyle {
+    background-color: #00cbff;
+    border: #005d7a 5px solid;
+    margin: 0;
+    text-align: start;
+}
+
 .pageContainer1 {
     background-color: #0E5F07;
     border: #268b00 solid 10px;
@@ -136,11 +143,6 @@ html {
 
 #itemCraftGuideBar1 {
     grid-area: CraftGuide1;
-    background-color: #00cbff;
-    border: #005d7a 5px solid;
-    margin: 0;
-    text-align: start;
-
 }
 
 .alignTriangle {
@@ -209,23 +211,27 @@ html {
 
     display: grid;
     grid-area: CP;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 50px auto auto auto;
     grid-gap: 10px;
     grid-template-areas:
-    ". CT CT ."
-    "GPS REK GT FF"
-    "GPS REK GT FF"
-    ". P P .";
+    "CraftGuide2 . CT . ."
+    "CraftGuide2 GPS REK GT FF"
+    "CraftGuide2 GPS REK GT FF"
+    "CraftGuide2 . P P .";
 
 
 
     height: 80vh; /*83 vh old*/
-    margin: 1em;
+    margin: 1em 0 1em 0;
 }
 
 #cellphoneTitle {
     grid-area: CT;
+}
+
+#itemCraftGuideBar2 {
+    grid-area: CraftGuide2;
 }
 
 #createGPS {
@@ -266,51 +272,39 @@ html {
 
 
 .AnkhShield {
-
     display: grid;
     grid-area: AS;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 50px auto auto auto;
     grid-gap: 10px;
     grid-template-areas:
-    ". . AST AST . ."
-    ". BF AB MB CCM TP"
-    ". BF AB MB CCM TP"
-    "OS OS OS AC AC AC"
-    "CAS CAS CAS CAS CAS CAS";
-
-
+    "CraftGuide3 . AST AST ."
+    "CraftGuide3 AB MB CCM TP"
+    "CraftGuide3 AB MB CCM TP"
+    "CraftGuide3 CAS CAS CAS CAS";
 
     height: 80vh; /*83 vh old*/
-    margin: 1em;
+    margin: 1em 0 1em 0;
 }
-
-
 
 #ankhShieldTitle {
     grid-area: AST;
 }
-#obsidianShield {
-    grid-area: OS;
+#itemCraftGuideBar3 {
+    grid-area: CraftGuide3;
 }
-#blindFold {
-    padding-top: 28%;
-    grid-area: BF;
-}
-#armorBracing {
+
+#createArmorBracing {
     grid-area: AB;
 }
-#medicatedBandage {
+#createMedicatedBandage {
     grid-area: MB;
 }
-#counterCurse {
+#createCounterCurse {
     grid-area: CCM;
 }
-#thePlan {
+#createThePlan {
     grid-area: TP;
-}
-#createAnkhCharm {
-    grid-area: AC;
 }
 #createAnkhShield {
     grid-area: CAS;
@@ -347,7 +341,7 @@ html {
     ". . . . . .";
 
     height: 80vh; /*83 vh old*/
-    margin: 1em;
+    margin: 1em 0 1em 0;
 }
 
 #zenithTitle {
