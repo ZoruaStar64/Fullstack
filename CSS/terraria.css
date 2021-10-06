@@ -319,7 +319,7 @@ html {
     grid-template-rows: auto;
 
     grid-template-areas:
-    "Z Z Z Z Z Z";
+    "Zen Zen Zen Zen Zen Zen";
 
     width: 98vw;
     height: auto; /*83, 90 vh old*/
@@ -329,16 +329,16 @@ html {
 .Zenith {
 
     display: grid;
-    grid-area: Z;
+    grid-area: Zen;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 50px auto auto auto;
     grid-gap: 10px;
     grid-template-areas:
-    ". . ZT ZT . ."
-    ". . . . . ."
-    ". . . . . ."
-    ". . . . . ."
-    ". . . . . .";
+    "CraftGuide4 . ZT ZT ZT ."
+    "CraftGuide4 NE NE NE NE NE"
+    "CraftGuide4 TerB TerB TerB TerB TerB"
+    "CraftGuide4 Z Z Z Z Z"
+    "CraftGuide4 Z Z Z Z Z";
 
     height: 80vh; /*83 vh old*/
     margin: 1em 0 1em 0;
@@ -347,3 +347,24 @@ html {
 #zenithTitle {
     grid-area: ZT;
 }
+
+#itemCraftGuideBar4 {
+    grid-area: CraftGuide4;
+}
+
+#createNightsEdge {
+    grid-area: NE;
+    margin-left: 75px;
+}
+
+#createTerrablade {
+    grid-area: TerB;
+}
+
+#createZenith {
+    grid-area: Z;
+}
+
+#createNightsEdge img, #createTerrablade img, #createZenith img  {
+     transform: scale(1);
+ }

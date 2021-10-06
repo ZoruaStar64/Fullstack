@@ -154,6 +154,42 @@
 <div class="pageContainer4">
     <div class="Zenith">
         <h1 id="zenithTitle">Zenith</h1>
+        <div id="itemCraftGuideBar4" class="craftGuideStyle">
+
+        </div>
+
+        <div id="createNightsEdge">
+            <img id="BoG" src="terrariaImg/Blade_of_Grass.png" alt="Blade of Grass">
+            <img id="muramasa" src="terrariaImg/Muramasa.png" alt="Muramasa">
+            <img id="FGS" src="terrariaImg/Fiery_Greatsword.png" alt="Fiery Greatsword">
+            <img id="lightsBane" src="terrariaImg/Lights_Bane.png" alt="Lights Bane">
+            <img id="BB" src="terrariaImg/Blood_Butcherer.png" alt="Blood Butcherer">
+        </div>
+
+        <div id="createTerrablade">
+            <img id="CB" src="terrariaImg/Chlorophyte_Bar.png" alt="Chlorophyte Bar">
+            <img id="excalibur" src="terrariaImg/Excalibur.png" alt="Excalibur">
+            <img id="nightsEdge" src="terrariaImg/Nights_Edge.png" alt="Nights Edge">
+            <br>
+            <img id="trueExcalibur" src="terrariaImg/True_Excalibur.png" alt="True Excalibur">
+            <img id="truenightsEdge" src="terrariaImg/True_Nights_Edge.png" alt="True Nights Edge">
+            <br>
+            <img id="terraBlade" src="terrariaImg/Terra_Blade.png" alt="Terra Blade">
+        </div>
+
+        <div id="createZenith">
+            <img id="CopperSS" src="terrariaImg/Copper_Shortsword.png" alt="Copper Shortsword">
+            <img id="starfury" src="terrariaImg/Starfury.png" alt="Starfury">
+            <img id="ES" src="terrariaImg/Enchanted_Sword.png" alt="Enchanted Sword">
+            <img id="BK" src="terrariaImg/Bee_Keeper.png" alt="Bee Keeper">
+            <img id="seedler" src="terrariaImg/Seedler.png" alt="Seedler">
+            <img id="THMB" src="terrariaImg/The_Horsemans_Blade.png" alt="The Horsemans Blade">
+            <img id="IW" src="terrariaImg/Influx_Waver.png" alt="Influx Waver">
+            <img id="starWrath" src="terrariaImg/Star_Wrath.png" alt="Star Wrath">
+            <img id="meowmere" src="terrariaImg/Meowmere.png" alt="Meowmere">
+            <br>
+            <img id="zenith" src="terrariaImg/Zenith.png" alt="Zenith">
+        </div>
 
     </div>
 </div>
