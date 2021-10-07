@@ -127,7 +127,7 @@ html {
     grid-template-rows: /*50px*/auto auto auto;
     grid-gap: 10px;
     grid-template-areas:
-    "CraftGuide1 . TST . ."
+    "CraftGuide1 TST TST TST TST"
     "CraftGuide1 FS .  LW ."
     "CraftGuide1 FS TS LW .";
 
@@ -215,7 +215,7 @@ html {
     grid-template-rows: 50px auto auto auto;
     grid-gap: 10px;
     grid-template-areas:
-    "CraftGuide2 . CT . ."
+    "CraftGuide2 CT CT CT CT"
     "CraftGuide2 GPS REK GT FF"
     "CraftGuide2 GPS REK GT FF"
     "CraftGuide2 . P P .";
@@ -278,7 +278,7 @@ html {
     grid-template-rows: 50px auto auto auto;
     grid-gap: 10px;
     grid-template-areas:
-    "CraftGuide3 . AST AST ."
+    "CraftGuide3 AST AST AST AST"
     "CraftGuide3 AB MB CCM TP"
     "CraftGuide3 AB MB CCM TP"
     "CraftGuide3 CAS CAS CAS CAS";
@@ -334,7 +334,7 @@ html {
     grid-template-rows: 50px auto auto auto;
     grid-gap: 10px;
     grid-template-areas:
-    "CraftGuide4 . ZT ZT ZT ."
+    "CraftGuide4 ZT ZT ZT ZT ZT"
     "CraftGuide4 NE NE NE NE NE"
     "CraftGuide4 TerB TerB TerB TerB TerB"
     "CraftGuide4 Z Z Z Z Z"
@@ -354,7 +354,6 @@ html {
 
 #createNightsEdge {
     grid-area: NE;
-    margin-left: 75px;
 }
 
 #createTerrablade {

@@ -486,3 +486,15 @@ function showMeowmereRecipe() {
         "<img style='float: left' src='../terrariaImg/Moon_Lord.png' alt='Moon Lord'><p>11.11% chance</p></div>"
 
 }
+
+function showZenithRecipe() {
+    craftGuide4.innerHTML = "";
+    craftGuide4.innerHTML += "<div style='margin: 10px 0 0 10px'><img style='transform: scale(1.5)' src='../terrariaImg/Zenith.png' alt='Zenith'><p style='float: right; margin: 10px 15% 0 0; font-size: 20px'>Made by</p><br><br>" +
+        "<p style='float: left; font-size: 15px'>Combining all swords below</p><p><img style='transform: scale(1)' src='../terrariaImg/Copper_Shortsword.png' alt='Copper ShortSword'><img style='transform: scale(1)' src='../terrariaImg/Starfury.png' alt='Starfury'>" +
+        "<img style='transform: scale(1)' src='../terrariaImg/Enchanted_Sword.png' alt='Enchanted Sword'><img style='transform: scale(1)' src='../terrariaImg/Bee_Keeper.png' alt='Bee keeper'>" +
+        "<img style='transform: scale(0.8)' src='../terrariaImg/Seedler.png' alt='Seedler'><img style='transform: scale(1)' src='../terrariaImg/Terra_Blade.png' alt='Terra Blade'>" +
+        "<img style='transform: scale(1)' src='../terrariaImg/The_Horsemans_Blade.png' alt='The Horsemans Blade'><img style='transform: scale(1)' src='../terrariaImg/Influx_Waver.png' alt='Influx Waver'>" +
+        "<img style='transform: scale(1)' src='../terrariaImg/Star_Wrath.png' alt='Star Wrath'><img style='transform: scale(1)' src='../terrariaImg/Meowmere.png' alt='Meowmere'></p>" +
+        "<p>At <img src='../terrariaImg/Mythril_Anvil.png' alt='Myhril Anvil'>or<img src='../terrariaImg/Orichalcum_Anvil.png' alt='Orichalcum Anvil'></p></div>";
+
+}
