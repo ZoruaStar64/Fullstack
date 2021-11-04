@@ -30,7 +30,7 @@
         <div id="itemCraftGuideBar1" class="craftGuideStyle">
 
         </div>
-        <div id="createFrostspark">
+        <div class="grayscale" id="createFrostspark">
             <p>
 
                  <img id="spectreBoots" src="terrariaImg/Spectre_Boots.png" alt="Spectre Boots"> <br>
@@ -44,11 +44,11 @@
 
         <div id="createTerraSpark">
             <p>
-                <img id="terraSpark" src="terrariaImg/Terraspark_Boots.png" alt="Terraspark Boots">
+                <img class="grayscale" id="terraSpark" src="terrariaImg/Terraspark_Boots.png" alt="Terraspark Boots">
             </p>
         </div>
 
-    <div id="createLavaWaders">
+    <div class="grayscale" id="createLavaWaders">
         <p>
             <img id="obsidianSkull1" src="terrariaImg/Obsidian_Skull.png" alt="Obsidian Skull">
             <br>
@@ -69,7 +69,7 @@
         <div id="itemCraftGuideBar2" class="craftGuideStyle">
 
         </div>
-        <div id="createGPS">
+        <div class="grayscale" id="createGPS">
             <p>
                 <img id="platWatch" src="terrariaImg/Platinum_Watch.png" alt="Platinum Watch">
                 <img id="goldWatch" src="terrariaImg/Gold_Watch.png" alt="Gold Watch">
@@ -80,23 +80,23 @@
 
         <div id="createREK3K">
             <p>
-            <img id="REK3K" src="terrariaImg/R.E.K._3000.png" alt="R.E.K.3000">
+            <img class="grayscale" id="REK3K" src="terrariaImg/R.E.K._3000.png" alt="R.E.K.3000">
             </p>
         </div>
 
         <div id="createGoblinTech">
         <p>
-            <img id="goblinTech" src="terrariaImg/Goblin_Tech.png" alt="Goblin Tech">
+            <img class="grayscale" id="goblinTech" src="terrariaImg/Goblin_Tech.png" alt="Goblin Tech">
         </p>
         </div>
 
         <div id="createFishFinder">
             <p>
-                <img id="fishFinder" src="terrariaImg/Fish_Finder.png" alt="Fish Finder">
+                <img class="grayscale" id="fishFinder" src="terrariaImg/Fish_Finder.png" alt="Fish Finder">
             </p>
         </div>
 
-        <div id="createPhone">
+        <div class="grayscale" id="createPhone">
             <p>
             <img id="PDA" src="terrariaImg/PDA.png" alt="PDA">
             <img id="cellPhone" src="terrariaImg/Cell_Phone.png" alt="Cellphone">
@@ -115,29 +115,29 @@
 
         <div id="createArmorBracing">
             <p>
-                <img id="armorBracing" src="terrariaImg/Armor_Bracing.png" alt="Armor Bracing">
+                <img class="grayscale" id="armorBracing" src="terrariaImg/Armor_Bracing.png" alt="Armor Bracing">
             </p>
         </div>
 
         <div id="createMedicatedBandage">
             <p>
-                <img id="medicatedBandage" src="terrariaImg/Medicated_Bandage.png" alt="Medicated Bandage">
+                <img class="grayscale" id="medicatedBandage" src="terrariaImg/Medicated_Bandage.png" alt="Medicated Bandage">
             </p>
         </div>
 
         <div id="createCounterCurse">
             <p>
-                <img id="counterCurse" src="terrariaImg/Countercurse_Mantra.png" alt="Countercurse Mantra">
+                <img class="grayscale" id="counterCurse" src="terrariaImg/Countercurse_Mantra.png" alt="Countercurse Mantra">
             </p>
         </div>
 
         <div id="createThePlan">
             <p>
-                <img id="thePlan" src="terrariaImg/The_Plan.png" alt="The Plan">
+                <img class="grayscale" id="thePlan" src="terrariaImg/The_Plan.png" alt="The Plan">
             </p>
         </div>
 
-        <div id="createAnkhShield">
+        <div class="grayscale" id="createAnkhShield">
             <p>
                 <img id="obsidianSkull2" src="terrariaImg/Obsidian_Skull.png" alt="Obsidian Skull">
                 <img id="blindfold" src="terrariaImg/Blindfold.png" alt="Blindfold">
@@ -158,15 +158,15 @@
 
         </div>
 
-        <div id="createNightsEdge">
-            <img id="BoG" src="terrariaImg/Blade_of_Grass.png" alt="Blade of Grass">
+        <div class="grayscale" id="createNightsEdge">
+            <img  id="BoG" src="terrariaImg/Blade_of_Grass.png" alt="Blade of Grass">
             <img id="muramasa" src="terrariaImg/Muramasa.png" alt="Muramasa">
             <img id="FGS" src="terrariaImg/Fiery_Greatsword.png" alt="Fiery Greatsword">
             <img id="lightsBane" src="terrariaImg/Lights_Bane.png" alt="Lights Bane">
             <img id="BB" src="terrariaImg/Blood_Butcherer.png" alt="Blood Butcherer">
         </div>
 
-        <div id="createTerrablade">
+        <div class="grayscale" id="createTerrablade">
             <img id="CB" src="terrariaImg/Chlorophyte_Bar.png" alt="Chlorophyte Bar">
             <img id="excalibur" src="terrariaImg/Excalibur.png" alt="Excalibur">
             <img id="nightsEdge" src="terrariaImg/Nights_Edge.png" alt="Nights Edge">
@@ -177,7 +177,7 @@
             <img id="terraBlade" src="terrariaImg/Terra_Blade.png" alt="Terra Blade">
         </div>
 
-        <div id="createZenith">
+        <div class="grayscale" id="createZenith">
             <img id="CopperSS" src="terrariaImg/Copper_Shortsword.png" alt="Copper Shortsword">
             <img id="starfury" src="terrariaImg/Starfury.png" alt="Starfury">
             <img id="ES" src="terrariaImg/Enchanted_Sword.png" alt="Enchanted Sword">

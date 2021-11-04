@@ -105,7 +105,6 @@ echo "</div>"
 
         <input id="creationButton" type='submit' name='createAcc' value='Create Account'>
 
-
     </form>
     <br>
 

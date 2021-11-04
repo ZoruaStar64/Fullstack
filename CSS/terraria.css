@@ -101,6 +101,10 @@ html {
     text-align: start;
 }
 
+.grayscale {
+    filter: grayscale(100%);
+}
+
 .pageContainer1 {
     background-color: #0E5F07;
     border: #268b00 solid 10px;
@@ -123,13 +127,13 @@ html {
     text-align: center;
     display: grid;
     grid-area: TS;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: /*50px*/auto auto auto;
     grid-gap: 10px;
     grid-template-areas:
-    "CraftGuide1 TST TST TST TST"
-    "CraftGuide1 FS .  LW ."
-    "CraftGuide1 FS TS LW .";
+    "CraftGuide1 TST TST TST"
+    "CraftGuide1 FS .  LW"
+    "CraftGuide1 FS TS LW";
 
 
     width: 94vw;
@@ -330,15 +334,15 @@ html {
 
     display: grid;
     grid-area: Zen;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 50px auto auto auto;
     grid-gap: 10px;
     grid-template-areas:
-    "CraftGuide4 ZT ZT ZT ZT ZT"
-    "CraftGuide4 NE NE NE NE NE"
-    "CraftGuide4 TerB TerB TerB TerB TerB"
-    "CraftGuide4 Z Z Z Z Z"
-    "CraftGuide4 Z Z Z Z Z";
+    "CraftGuide4 ZT ZT ZT"
+    "CraftGuide4 NE NE NE"
+    "CraftGuide4 TerB TerB TerB"
+    "CraftGuide4 Z Z Z"
+    "CraftGuide4 Z Z Z";
 
     height: 80vh; /*83 vh old*/
     margin: 1em 0 1em 0;
