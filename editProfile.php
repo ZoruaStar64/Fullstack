@@ -33,7 +33,7 @@ echo "Change your Bio with this textbox here!";
 make sure there aren't any spaces in the file name<br>
 Instead of space use either - or _</p>
 
-<form id="changePFP" action='test.php' method='POST' enctype="multipart/form-data">
+<form id="changePFP" action='includes/inc.changeBio.php' method='POST' enctype="multipart/form-data">
 
     <div>
        click the button below and input either a jpg or png file! <br>

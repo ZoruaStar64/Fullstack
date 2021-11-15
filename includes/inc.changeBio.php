@@ -1,7 +1,7 @@
 <?php
 
-require_once('functions.php');
-require_once('creds.php');
+require_once('../functions.php');
+require_once('../creds.php');
 JSC($_FILES);
 JSC($_POST);
 

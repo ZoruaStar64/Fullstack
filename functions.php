@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('creds.php');
+
 global $link;
 $showloggedin = false;
 
@@ -44,9 +45,7 @@ if (isset($_POST["createAcc"])) {
     }
     createAccount($link, $emailReg, $nickname, $passwordReg, $gender);
 }
-
-
-
+/*
 function createAccount ($link, $emailReg, $nickname, $passwordReg, $gender)
 {
 
@@ -63,56 +62,85 @@ function createAccount ($link, $emailReg, $nickname, $passwordReg, $gender)
         mysqli_stmt_close($stmt1);
     }
 }
+*/
+
+function createAccount ($link, $emailReg, $nickname, $passwordReg, $gender)
+{
+
+    $hashedPassword = password_hash($passwordReg, PASSWORD_DEFAULT);
+    $query = "INSERT INTO u3651p69583_tracker.Users(`e-mail`, nickname, password, gender) VALUE (?, ?, ?, ?)";
+    $stmt1 = mysqli_prepare($link, $query);
+    $stmt1->bind_param("ssss", $emailReg, $nickname, $hashedPassword, $gender);
+    if (!$stmt1) {
+        die("mysqli error: " . mysqli_error($link));
+    } else {
+        mysqli_stmt_execute($stmt1);
+
+        $creationMessage = "Account created!";
+        echo mysqli_stmt_error($stmt1);
+        mysqli_stmt_close($stmt1);
+    }
+}
 
 if (isset($_POST["login"])) {
     inLogFormulier($link);
 }
 
 function inLogFormulier($link) {
-    global $showloggedin, $profilePicture, $userName, $userId, $bio;
 
+    global $showloggedin, $profilePicture, $userName, $userId, $bio;
 
     $email = $_POST['emailLogin'];
     $wachtwoord = $_POST['passwordLogin'];
 
-    $query = "SELECT * FROM u3651p69583_tracker.Users WHERE `e-mail` = '$email' AND password = '$wachtwoord'";
-    $result = $link->query($query);
- /*   $statement = mysqli_prepare($link, $query);
-    $statement->bind_param("isssss", $userId, $trueEmail, $nick, $trueWachtwoord, $gender, $profilePicture);*/
-
-    while ($arraytable = $result->fetch_assoc()) {
-
-        $profileId = $arraytable['userId'];
-        $trueEmail = $arraytable['e-mail'];
-        $nick = $arraytable['nickname'];
-        $trueWachtwoord = $arraytable['password'];
-        $gender = $arraytable['gender'];
-        $bio = $arraytable['bio'];
-        $profilePicture = $arraytable['profilePicture'];
+    $queryPasswordCheck = "SELECT password FROM u3651p69583_tracker.Users WHERE `e-mail` = '$email' ";
+    $checkResult = $link->query($queryPasswordCheck);
+    while ($checkedResult = $checkResult->fetch_assoc()) {
+        $DBpwd = $checkedResult['password'];
     }
 
-    if (isset($_POST['login'])
-        && $email == $trueEmail && $wachtwoord == $trueWachtwoord) {
+    if (password_verify($wachtwoord, $DBpwd)) {
+        echo "verifying";
+        $query = "SELECT * FROM u3651p69583_tracker.Users WHERE `e-mail` = '$email'";
+        $result = $link->query($query);
+        /*   $statement = mysqli_prepare($link, $query);
+           $statement->bind_param("isssss", $userId, $trueEmail, $nick, $trueWachtwoord, $gender, $profilePicture);*/
 
-        $_SESSION["user"] = array("userId" => $profileId,
-            "email" => $trueEmail,
-            "name" => $nick,
-            "wachtwoord" => $trueWachtwoord,
-            "gender" => $gender,
-            "bio" => $bio,
-            "PFP" => $profilePicture);
+        while ($arraytable = $result->fetch_assoc()) {
+
+            $profileId = $arraytable['userId'];
+            $trueEmail = $arraytable['e-mail'];
+            $nick = $arraytable['nickname'];
+            $trueWachtwoord = $arraytable['password'];
+            $gender = $arraytable['gender'];
+            $bio = $arraytable['bio'];
+            $profilePicture = $arraytable['profilePicture'];
+        }
+        if (isset($_POST['login'])) {
+
+            $_SESSION["user"] = array("userId" => $profileId,
+                "email" => $trueEmail,
+                "name" => $nick,
+                "wachtwoord" => $trueWachtwoord,
+                "gender" => $gender,
+                "bio" => $bio,
+                "PFP" => $profilePicture);
 
 
-        $usercreds = userCreds();
-        $profilePicture = $usercreds['profilePicture'];
-        $userName = $usercreds['userName'];
-        $userId = $usercreds['userId'];
-        $bio = $usercreds['bio'];
-        $showloggedin = true;
+            $usercreds = userCreds();
+            $profilePicture = $usercreds['profilePicture'];
+            $userName = $usercreds['userName'];
+            $userId = $usercreds['userId'];
+            $bio = $usercreds['bio'];
+            $showloggedin = true;
+        }
 
     }
-
+    else {
+        echo "either the e-mail or password has been typed in incorrectly.";
+    }
 }
+
 
 if (isset($_POST["changeBio"])) {
 
@@ -161,6 +189,38 @@ function editPFP ($link, $PFP, $userId) {
         header("Location: profile.php?id=$userId");
     }
 }
+
+//end of profile functions
+//start of Main Menu functions
+
+function createGame($link, $gameName, $gameCover) {
+    {
+
+        $query = "INSERT INTO u3651p69583_tracker.Games(`gameName`, gameCover) VALUE (?, ?)";
+        $stmt1 = mysqli_prepare($link, $query);
+        $stmt1->bind_param("ss", $gameName, $gameCover);
+        if (!$stmt1) {
+            die("mysqli error: " . mysqli_error($link));
+        } else {
+            mysqli_stmt_execute($stmt1);
+
+            echo mysqli_stmt_error($stmt1);
+            mysqli_stmt_close($stmt1);
+            /*header("Location: mainMenu.php");*/
+        }
+    }
+}
+
+
+//end of Main Menu functions
+//start of Tchecklist functions
+
+function terrariaItemChecked() {
+
+}
+
+
+//start of misc functions
 
 function userCreds() {
 

@@ -2,18 +2,12 @@
 session_start();
 
 require_once('creds.php');
-
-$showloggedin = false;
-$profilePicture = "img/notLoggedIn.png";
-$userName = "Not logged in";
-$userId = 0;
 require_once('functions.php');
 /*setcookie("userCookie", $profilePicture, $userId, $userName, time(), "/~/");*/
 
 $details = userCreds();
 $profilePicture = $details["profilePicture"];
 $userName = $details["userName"];
-$bio = $details["bio"];
 
 if (isset($_GET["logout"])) {
     /*session_start();*/
@@ -39,7 +33,6 @@ if (isset($_GET["logout"])) {
 </head>
 <body>
 <div class="pageContainer">
-    <h1><?php echo $_SESSION["user"]["gender"];?></h1>
     <div class="userBox">
     <img style="margin: 0 0 0 0" id="profilePicture" src="<?php echo $profilePicture ?>" width="100px" height="100px" alt="Profile Picture">
 
