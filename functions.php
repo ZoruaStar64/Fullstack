@@ -100,7 +100,6 @@ function inLogFormulier($link) {
     }
 
     if (password_verify($wachtwoord, $DBpwd)) {
-        echo "verifying";
         $query = "SELECT * FROM u3651p69583_tracker.Users WHERE `e-mail` = '$email'";
         $result = $link->query($query);
         /*   $statement = mysqli_prepare($link, $query);
@@ -193,12 +192,12 @@ function editPFP ($link, $PFP, $userId) {
 //end of profile functions
 //start of Main Menu functions
 
-function createGame($link, $gameName, $gameCover) {
+function createGame($link, $gameName, $gameCover, $pageLink) {
     {
 
-        $query = "INSERT INTO u3651p69583_tracker.Games(`gameName`, gameCover) VALUE (?, ?)";
+        $query = "INSERT INTO u3651p69583_tracker.Games(`gameName`, gameCover, pageLink) VALUE (?, ?, ?)";
         $stmt1 = mysqli_prepare($link, $query);
-        $stmt1->bind_param("ss", $gameName, $gameCover);
+        $stmt1->bind_param("sss", $gameName, $gameCover, $pageLink);
         if (!$stmt1) {
             die("mysqli error: " . mysqli_error($link));
         } else {
@@ -211,16 +210,74 @@ function createGame($link, $gameName, $gameCover) {
     }
 }
 
+function loadGames($link) {
+    $query = "SELECT * FROM u3651p69583_tracker.Games";
+    $result = $link->query($query);
+    /*   $statement = mysqli_prepare($link, $query);
+       $statement->bind_param("isssss", $userId, $trueEmail, $nick, $trueWachtwoord, $gender, $profilePicture);*/
+
+    while ($arraytable = $result->fetch_assoc()) {
+
+        $gameId = $arraytable['gameId'];
+        $gameName = $arraytable['gameName'];
+        $gameCover = $arraytable['gameCover'];
+        $pageLink = $arraytable['pageLink'];
+
+
+
+        echo '<div id="row1">
+            <a href="' .$pageLink[$gameId] .'"><img alt="' .$gameName[$gameId] . '" class="seperate" src="' .$gameCover[$gameId] . '" width="125" height="175"></a>
+            <a href="' .$pageLink[$gameId] .'"><img alt="' .$gameName[$gameId] . '" class="seperate" src="' .$gameCover[$gameId] . '" width="125" height="175"></a>
+            <a href="' .$pageLink[$gameId] .'"><img alt="' .$gameName[$gameId] . '" class="seperate" src="' .$gameCover[$gameId] . '" width="125" height="175"></a>
+            <a href="' .$pageLink[$gameId] .'"><img alt="' .$gameName[$gameId] . '" class="seperate" src="' .$gameCover[$gameId] . '" width="125" height="175"></a>
+            <a href="' .$pageLink[$gameId] .'"><img alt="' .$gameName[$gameId] . '" class="seperate" src="' .$gameCover[$gameId] . '" width="125" height="175"></a>
+  
+          </div>';
+
+       /* <div id="row1">
+<!--        <form id="favoriteGame1" action="includes/inc.favoriteGame" method="POST">
+        <input style="filter: grayscale(100%)" type="image" src="img/ColoredStar.png" alt="FavoriteStar" name="FavoriteStar1" id="FavoriteStar1">
+        </form>-->
+        <a href="terrariaChecklist.php"><img class="seperate" src="img/Terraria.png" width="125" height="175"></a>
+        <a href="#"><img class="seperate" src="img/luigi's%20mansion.png" width="125" height="175"></a>
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+    </div>
+    <div id="row2">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+    </div>
+    <div id="row3">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
+    </div>*/
+
+    }
+
+}
+
+function favOrUnFavGame() {
+
+}
+
 
 //end of Main Menu functions
 //start of Tchecklist functions
 
-function terrariaItemChecked() {
+function checkTerrariaItem() {
 
 }
 
 
 //start of misc functions
+
 
 function userCreds() {
 

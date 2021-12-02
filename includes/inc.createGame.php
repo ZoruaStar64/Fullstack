@@ -64,5 +64,6 @@ function JSC($input){
 
 
 $gameName = $_POST['gameName'];
-createGame($link, $gameName, $target_file);
+$pageLink = $_POST['pageLink'];
+createGame($link, $gameName, $target_file, $pageLink);
 

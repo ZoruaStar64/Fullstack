@@ -25,6 +25,9 @@
 <div class="pageContainer">
 
     <div id="row1">
+<!--        <form id="favoriteGame1" action="includes/inc.favoriteGame" method="POST">
+        <input style="filter: grayscale(100%)" type="image" src="img/ColoredStar.png" alt="FavoriteStar" name="FavoriteStar1" id="FavoriteStar1">
+        </form>-->
         <a href="terrariaChecklist.php"><img class="seperate" src="img/Terraria.png" width="125" height="175"></a>
         <a href="#"><img class="seperate" src="img/luigi's%20mansion.png" width="125" height="175"></a>
         <img class="seperate" src="img/emptyTracker.png" width="125" height="175">

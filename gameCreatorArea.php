@@ -10,7 +10,10 @@ require_once('functions.php');
     <div>
         <!--<input type="hidden" name="hiddenId" value="<?php /*echo $userId */?>">-->
         Game name : <input type='text' name='gameName' value='' required>
+        <br>
         Game cover (Image): <input type="file" name="gameCover" value="" required>
+        <br>
+        Page link: <input type="text" name="pageLink" value="" required>
     </div>
     <input id="gameCreationButton" type='submit' name='createGame' value='Create Game'>
 
