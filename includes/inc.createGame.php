@@ -5,7 +5,7 @@ require_once('../creds.php');
 JSC($_FILES);
 JSC($_POST);
 
-$target_dir = "uploads/";
+$target_dir = "../uploads/";
 $target_file = $target_dir . basename($_FILES["gameCover"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

@@ -211,62 +211,44 @@ function createGame($link, $gameName, $gameCover, $pageLink) {
 }
 
 function loadGames($link) {
-    $query = "SELECT * FROM u3651p69583_tracker.Games";
+
+    $userId = $_SESSION['user']['userId'];
+    /*for ($counter1 = 0; $counter1 < 15; $counter1++ ) {*/
+        $query = "SELECT * FROM u3651p69583_tracker.Games LIMIT 15";
     $result = $link->query($query);
     /*   $statement = mysqli_prepare($link, $query);
        $statement->bind_param("isssss", $userId, $trueEmail, $nick, $trueWachtwoord, $gender, $profilePicture);*/
+    $defaultRows = 15 - $result->num_rows;
 
     while ($arraytable = $result->fetch_assoc()) {
 
-        $gameId = $arraytable['gameId'];
+        $gameId = $arraytable['idGame'];
         $gameName = $arraytable['gameName'];
         $gameCover = $arraytable['gameCover'];
         $pageLink = $arraytable['pageLink'];
 
+        echo '
+            <div style="width: 125px; height: 175px" class="seperate image-container" style="position: relative">
+            <a href="' . $pageLink .'">
+           
+            <form style="position: absolute; margin: 10px 0 0 10px" id="favoriteGame" name="favoriteGame" action="includes/inc.favoriteGame.php" method="POST">
+            <input type="hidden" value="' . $gameId .'" name="hiddenId1">
+            <input type="hidden" value="' . $userId .'" name="hiddenId2">
+            <input type="submit" value="" style="background: url(img/ColoredStar.png); filter: grayscale(100%); border: none; height: 17px; width: 17px" name="favoriteGame">
+            </form>
+             <img class="seperate" alt="' . $gameName . '"  src="' . $gameCover . '"  width="125" height="175">
+             </a>
+            </div>
+          ';
 
 
-        echo '<div id="row1">
-            <a href="' .$pageLink[$gameId] .'"><img alt="' .$gameName[$gameId] . '" class="seperate" src="' .$gameCover[$gameId] . '" width="125" height="175"></a>
-            <a href="' .$pageLink[$gameId] .'"><img alt="' .$gameName[$gameId] . '" class="seperate" src="' .$gameCover[$gameId] . '" width="125" height="175"></a>
-            <a href="' .$pageLink[$gameId] .'"><img alt="' .$gameName[$gameId] . '" class="seperate" src="' .$gameCover[$gameId] . '" width="125" height="175"></a>
-            <a href="' .$pageLink[$gameId] .'"><img alt="' .$gameName[$gameId] . '" class="seperate" src="' .$gameCover[$gameId] . '" width="125" height="175"></a>
-            <a href="' .$pageLink[$gameId] .'"><img alt="' .$gameName[$gameId] . '" class="seperate" src="' .$gameCover[$gameId] . '" width="125" height="175"></a>
-  
-          </div>';
-
-       /* <div id="row1">
-<!--        <form id="favoriteGame1" action="includes/inc.favoriteGame" method="POST">
-        <input style="filter: grayscale(100%)" type="image" src="img/ColoredStar.png" alt="FavoriteStar" name="FavoriteStar1" id="FavoriteStar1">
-        </form>-->
-        <a href="terrariaChecklist.php"><img class="seperate" src="img/Terraria.png" width="125" height="175"></a>
-        <a href="#"><img class="seperate" src="img/luigi's%20mansion.png" width="125" height="175"></a>
-        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
-        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
-        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
-    </div>
-    <div id="row2">
-        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
-        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
-        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
-        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
-        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
-    </div>
-    <div id="row3">
-        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
-        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
-        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
-        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
-        <img class="seperate" src="img/emptyTracker.png" width="125" height="175">
-    </div>*/
-
+    }
+    for($i = 0; $i < $defaultRows; $i++){
+        //here placeholder
+        echo '<img alt="Placeholder" class="seperate" src="img/emptyTracker.png" width="125" height="175">';
     }
 
 }
-
-function favOrUnFavGame() {
-
-}
-
 
 //end of Main Menu functions
 //start of Tchecklist functions
