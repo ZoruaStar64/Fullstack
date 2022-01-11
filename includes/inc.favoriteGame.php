@@ -11,6 +11,32 @@ function favOrUnFavGame($link, $gameId, $userId) {
     print_r($gameId);
     echo "<br>";
     print_r($userId);
+
+    $query = "SELECT favorited FROM Favorites WHERE Games_idGame='$gameId' AND Users_userId='$userId'";
+    $result = $link->query($query);
+    while ($arraytable = $result->fetch_assoc()) {
+        $currentFav = $arraytable['favorited'];
+    }
+
+
+    if ($currentFav == 0) {
+        $updatedFav = 1;
+    }
+    else if ($currentFav == 1) {
+        $updatedFav = 0;
+    }
+
+    $updateFav = "UPDATE u3651p69583_tracker.Favorites SET favorited='$updatedFav' WHERE Games_idGame='$gameId' AND Users_userId='$userId'";
+    $stmt1 = $link->prepare($updateFav);
+    $stmt1->bind_param("i", $updatedFav);
+    if (!$stmt1) {
+        die("mysqli error: " . mysqli_error($link));
+    } else {
+        mysqli_stmt_execute($stmt1);
+
+        mysqli_stmt_close($stmt1);
+    }
+
 }
 
 

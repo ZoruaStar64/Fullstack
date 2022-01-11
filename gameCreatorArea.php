@@ -8,7 +8,6 @@ require_once('functions.php');
 <form id="createGame" action='includes/inc.createGame.php' method='POST' enctype="multipart/form-data">
 
     <div>
-        <!--<input type="hidden" name="hiddenId" value="<?php /*echo $userId */?>">-->
         Game name : <input type='text' name='gameName' value='' required>
         <br>
         Game cover (Image): <input type="file" name="gameCover" value="" required>

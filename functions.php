@@ -134,6 +134,38 @@ function inLogFormulier($link) {
             $showloggedin = true;
         }
 
+        //This part exists so the database's favorite table stays updated
+
+        $query2 = "SELECT COUNT(*) as total FROM Games";
+        $result2 = $link->query($query2);
+        while ($arraytable2 = $result2->fetch_assoc()) {
+            $gameTotal = $arraytable2['total'];
+        }
+        $query3 = "SELECT COUNT(*) as existingFavoriteRows FROM Favorites WHERE Users_userId = '$userId'";
+        $result3 = $link->query($query3);
+        while ($arraytable3 = $result3->fetch_assoc()) {
+            $existingFavoriteRows = $arraytable3['existingFavoriteRows'];
+        }
+        $missingFavorites = $gameTotal - $existingFavoriteRows;
+
+        if ($missingFavorites > 0 && $missingFavorites <= $gameTotal) {
+            for ($favoriteStartPoint = ($existingFavoriteRows + 1); $favoriteStartPoint <= $gameTotal; $favoriteStartPoint++) {
+                $queryFav = "INSERT INTO u3651p69583_tracker.Favorites(Games_idGame, Users_userId) VALUE (?, ?)";
+                $stmt1 = mysqli_prepare($link, $queryFav);
+                $stmt1->bind_param("ii", $favoriteStartPoint, $userId);
+                if (!$stmt1) {
+                    die("mysqli error: " . mysqli_error($link));
+                } else {
+                    mysqli_stmt_execute($stmt1);
+
+                    echo mysqli_stmt_error($stmt1);
+                    mysqli_stmt_close($stmt1);
+                }
+            }
+        }
+
+
+
     }
     else {
         echo "either the e-mail or password has been typed in incorrectly.";
@@ -211,6 +243,13 @@ function createGame($link, $gameName, $gameCover, $pageLink) {
 }
 
 function loadGames($link) {
+    $test = 0;
+    if ($test == 0) {
+        $class = 'favStarUnchecked';
+    }
+    elseif ($test == 1) {
+        $class = 'favStarChecked';
+    }
 
     $userId = $_SESSION['user']['userId'];
     /*for ($counter1 = 0; $counter1 < 15; $counter1++ ) {*/
@@ -234,7 +273,8 @@ function loadGames($link) {
             <form style="position: absolute; margin: 10px 0 0 10px" id="favoriteGame" name="favoriteGame" action="includes/inc.favoriteGame.php" method="POST">
             <input type="hidden" value="' . $gameId .'" name="hiddenId1">
             <input type="hidden" value="' . $userId .'" name="hiddenId2">
-            <input type="submit" value="" style="background: url(img/ColoredStar.png); filter: grayscale(100%); border: none; height: 17px; width: 17px" name="favoriteGame">
+
+            <input type="submit" value="" class="' . $class . '" name="favoriteGame">
             </form>
              <img class="seperate" alt="' . $gameName . '"  src="' . $gameCover . '"  width="125" height="175">
              </a>
