@@ -243,17 +243,17 @@ function createGame($link, $gameName, $gameCover, $pageLink) {
 }
 
 function loadGames($link) {
-    $test = 0;
+/*    $test = 0;
     if ($test == 0) {
         $class = 'favStarUnchecked';
     }
     elseif ($test == 1) {
         $class = 'favStarChecked';
-    }
-
+    }*/
+    //SELECT * FROM Games LIMIT 15 INNER JOIN Favorites ON Games.idGame = Favorites.Games_idGame
     $userId = $_SESSION['user']['userId'];
     /*for ($counter1 = 0; $counter1 < 15; $counter1++ ) {*/
-        $query = "SELECT * FROM u3651p69583_tracker.Games LIMIT 15";
+        $query = "SELECT * FROM Games INNER JOIN Favorites ON Games.idGame = Favorites.Games_idGame WHERE Favorites.Users_userId = '$userId'";
     $result = $link->query($query);
     /*   $statement = mysqli_prepare($link, $query);
        $statement->bind_param("isssss", $userId, $trueEmail, $nick, $trueWachtwoord, $gender, $profilePicture);*/
@@ -265,6 +265,14 @@ function loadGames($link) {
         $gameName = $arraytable['gameName'];
         $gameCover = $arraytable['gameCover'];
         $pageLink = $arraytable['pageLink'];
+        $favorited = $arraytable['favorited'];
+
+        if ($favorited == 0) {
+            $class = 'favStarUnchecked';
+        }
+        elseif ($favorited == 1) {
+            $class = 'favStarChecked';
+        }
 
         echo '
             <div style="width: 125px; height: 175px" class="seperate image-container" style="position: relative">
