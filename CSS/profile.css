@@ -75,6 +75,22 @@ p, a{
     }
 }
 
+.favStarUnchecked {
+    background: url(../img/ColoredStar.png);
+    filter: grayscale(100%);
+    border: none;
+    height: 17px;
+    width: 17px
+}
+
+.favStarChecked {
+    background: url(../img/ColoredStar.png);
+    filter: grayscale(0%);
+    border: none;
+    height: 17px;
+    width: 17px
+}
+
 @media all and (min-width: 500px) {
 
     .linkButtons {

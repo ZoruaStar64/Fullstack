@@ -4,20 +4,13 @@ include_once("../creds.php");
 
 global $link;
 
-function favOrUnFavGame($link, $gameId, $userId) {
-
-    echo "<p>function called</p>";
-
-    print_r($gameId);
-    echo "<br>";
-    print_r($userId);
+function favOrUnFavGame1($link, $gameId, $userId) {
 
     $query = "SELECT favorited FROM Favorites WHERE Games_idGame='$gameId' AND Users_userId='$userId'";
     $result = $link->query($query);
     while ($arraytable = $result->fetch_assoc()) {
         $currentFav = $arraytable['favorited'];
     }
-
 
     if ($currentFav == 0) {
         $updatedFav = 1;
@@ -35,10 +28,38 @@ function favOrUnFavGame($link, $gameId, $userId) {
         mysqli_stmt_execute($stmt1);
 
         mysqli_stmt_close($stmt1);
+        header("Location: ../mainMenu.php");
     }
 
 }
+function favOrUnFavGame2($link, $gameId, $userId) {
 
+    $query = "SELECT favorited FROM Favorites WHERE Games_idGame='$gameId' AND Users_userId='$userId'";
+    $result = $link->query($query);
+    while ($arraytable = $result->fetch_assoc()) {
+        $currentFav = $arraytable['favorited'];
+    }
+
+    if ($currentFav == 0) {
+        $updatedFav = 1;
+    }
+    else if ($currentFav == 1) {
+        $updatedFav = 0;
+    }
+
+    $updateFav = "UPDATE u3651p69583_tracker.Favorites SET favorited='$updatedFav' WHERE Games_idGame='$gameId' AND Users_userId='$userId'";
+    $stmt1 = $link->prepare($updateFav);
+    $stmt1->bind_param("i", $updatedFav);
+    if (!$stmt1) {
+        die("mysqli error: " . mysqli_error($link));
+    } else {
+        mysqli_stmt_execute($stmt1);
+
+        mysqli_stmt_close($stmt1);
+        header("Location: ../profile.php?id=$userId");
+    }
+
+}
 
 ?>
 
@@ -55,11 +76,17 @@ function favOrUnFavGame($link, $gameId, $userId) {
 <body>
 
 <?php
-if (isset($_POST["favoriteGame"])) {
+if (isset($_POST["favoriteGame1"])) {
 
     $gameId = $_POST["hiddenId1"];
     $userId = $_POST["hiddenId2"];
-    favOrUnFavGame($link, $gameId, $userId);
+    favOrUnFavGame1($link, $gameId, $userId);
+}
+if (isset($_POST["favoriteGame2"])) {
+
+    $gameId = $_POST["hiddenId1"];
+    $userId = $_POST["hiddenId2"];
+    favOrUnFavGame2($link, $gameId, $userId);
 }
 ?>
 

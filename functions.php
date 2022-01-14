@@ -221,6 +221,51 @@ function editPFP ($link, $PFP, $userId) {
     }
 }
 
+function loadFavoritedGames($link) {
+    $userId = $_SESSION['user']['userId'];
+    $query = "SELECT * FROM Games INNER JOIN Favorites ON Games.idGame = Favorites.Games_idGame WHERE Favorites.Users_userId = '$userId' AND Favorites.favorited = '1'";
+    $result = $link->query($query);
+    $defaultRows = 5 - $result->num_rows;
+
+    while ($arraytable = $result->fetch_assoc()) {
+
+        $gameId = $arraytable['idGame'];
+        $gameName = $arraytable['gameName'];
+        $gameCover = $arraytable['gameCover'];
+        $pageLink = $arraytable['pageLink'];
+        $favorited = $arraytable['favorited'];
+
+        if ($favorited == 0) {
+            $class = 'favStarUnchecked';
+        }
+        elseif ($favorited == 1) {
+            $class = 'favStarChecked';
+        }
+
+        echo '
+            <div style="width: 125px; height: 175px" class="gameOrder" style="position: relative">
+            <a href="' . $pageLink .'">
+           
+            <form style="position: absolute; margin: 10px 0 0 10px" id="favoriteGame2" name="favoriteGame2" action="includes/inc.favoriteGame.php" method="POST">
+            <input type="hidden" value="' . $gameId .'" name="hiddenId1">
+            <input type="hidden" value="' . $userId .'" name="hiddenId2">
+
+            <input type="submit" value="" class="' . $class . '" name="favoriteGame2">
+            </form>
+             <img class="seperate" alt="' . $gameName . '"  src="' . $gameCover . '"  width="125" height="175">
+             </a>
+            </div>
+          ';
+
+
+    }
+    for($i = 0; $i < $defaultRows; $i++){
+        //here placeholder
+        echo '<img alt="Placeholder" class="seperate" src="img/emptyTracker.png" width="125" height="175">';
+    }
+
+}
+
 //end of profile functions
 //start of Main Menu functions
 
@@ -243,20 +288,11 @@ function createGame($link, $gameName, $gameCover, $pageLink) {
 }
 
 function loadGames($link) {
-/*    $test = 0;
-    if ($test == 0) {
-        $class = 'favStarUnchecked';
-    }
-    elseif ($test == 1) {
-        $class = 'favStarChecked';
-    }*/
+
     //SELECT * FROM Games LIMIT 15 INNER JOIN Favorites ON Games.idGame = Favorites.Games_idGame
     $userId = $_SESSION['user']['userId'];
-    /*for ($counter1 = 0; $counter1 < 15; $counter1++ ) {*/
         $query = "SELECT * FROM Games INNER JOIN Favorites ON Games.idGame = Favorites.Games_idGame WHERE Favorites.Users_userId = '$userId'";
     $result = $link->query($query);
-    /*   $statement = mysqli_prepare($link, $query);
-       $statement->bind_param("isssss", $userId, $trueEmail, $nick, $trueWachtwoord, $gender, $profilePicture);*/
     $defaultRows = 15 - $result->num_rows;
 
     while ($arraytable = $result->fetch_assoc()) {
@@ -278,11 +314,11 @@ function loadGames($link) {
             <div style="width: 125px; height: 175px" class="seperate image-container" style="position: relative">
             <a href="' . $pageLink .'">
            
-            <form style="position: absolute; margin: 10px 0 0 10px" id="favoriteGame" name="favoriteGame" action="includes/inc.favoriteGame.php" method="POST">
+            <form style="position: absolute; margin: 10px 0 0 10px" id="favoriteGame1" name="favoriteGame1" action="includes/inc.favoriteGame.php" method="POST">
             <input type="hidden" value="' . $gameId .'" name="hiddenId1">
             <input type="hidden" value="' . $userId .'" name="hiddenId2">
 
-            <input type="submit" value="" class="' . $class . '" name="favoriteGame">
+            <input type="submit" value="" class="' . $class . '" name="favoriteGame1">
             </form>
              <img class="seperate" alt="' . $gameName . '"  src="' . $gameCover . '"  width="125" height="175">
              </a>

@@ -58,11 +58,14 @@ echo $bio;*/
 
 
         <div class="gameContainer">
+            <?php
+            loadFavoritedGames($link);
+            ?>
+<!--            <img id="gameOrder" src="img/emptyTracker.png">
             <img id="gameOrder" src="img/emptyTracker.png">
             <img id="gameOrder" src="img/emptyTracker.png">
             <img id="gameOrder" src="img/emptyTracker.png">
-            <img id="gameOrder" src="img/emptyTracker.png">
-            <img id="gameOrder" src="img/emptyTracker.png">
+            <img id="gameOrder" src="img/emptyTracker.png">-->
             <a href="#" style="float: right; margin-right: 10px">See more</a>
         </div>
     </div>

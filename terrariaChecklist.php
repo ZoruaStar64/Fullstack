@@ -1,6 +1,6 @@
 <?php
 include('functions.php');
-
+$userId = $_SESSION['user']['userId'];
 ?>
 
 <!doctype html>
@@ -18,7 +18,7 @@ include('functions.php');
 <div id="navbar">
     <div class="Shine">
         <div><a href='index.php'><figure><img class="linkButtons" src='img/HomeButton.png' alt='Home button'></figure></a></div>
-        <div><a href='profile.php'><figure><img class="linkButtons" src='img/ProfileButton.png' alt='main menu button'></figure></a></div>
+        <div><a href='profile.php?id=<?php echo $userId ?>'><figure><img class="linkButtons" src='img/ProfileButton.png' alt='main menu button'></figure></a></div>
         <div><a href='index.php?logout'><figure><img class="linkButtons" src='img/LogoutButton.png' alt='Logout button'></figure></a></div>
     </div>
 </div>
