@@ -76,7 +76,7 @@ echo "</div>"
 
     <form id="registerForm" style="display: none" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>' method='POST'>
         <div class="inputContainer">
-            <label>Email</label> &emsp;&ensp;&nbsp;: <input type='text' name='emailReg' value='' required>
+            <label>Email</label> &emsp;&ensp;&nbsp;: <input type='email' name='emailReg' value='' required>
         </div>
 
         <div class="inputContainer">

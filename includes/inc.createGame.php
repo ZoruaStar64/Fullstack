@@ -5,6 +5,12 @@ require_once('../creds.php');
 JSC($_FILES);
 JSC($_POST);
 
+$userId = $_SESSION['user']['userId'];
+
+if ($userId ==! 1) {
+    header("Location: index.php");
+}
+
 $target_dir = "../uploads/";
 $target_file = $target_dir . basename($_FILES["gameCover"]["name"]);
 $uploadOk = 1;

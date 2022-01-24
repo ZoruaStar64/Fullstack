@@ -1,59 +1,59 @@
 //Terraspark Boots objects
 const craftGuide1 = document.getElementById("itemCraftGuideBar1");
-const spectreBoots = document.getElementById("spectreBoots");
-const lightningBoots = document.getElementById("lightningBoots");
-const frostsparkBoots = document.getElementById("frostsparkBoots");
-const obsidianSkull1 = document.getElementById("obsidianSkull1");
-const moltenCharm = document.getElementById("moltenCharm");
-const lavaWaders = document.getElementById("lavaWaders");
-const terraSpark = document.getElementById("terraSpark");
+const spectreBoots = document.getElementById("tracker1");
+const lightningBoots = document.getElementById("tracker2");
+const frostsparkBoots = document.getElementById("tracker3");
+const obsidianSkull1 = document.getElementById("tracker4");
+const moltenCharm = document.getElementById("tracker5");
+const lavaWaders = document.getElementById("tracker6");
+const terraSpark = document.getElementById("tracker7");
 
 //Cellphone objects
 const craftGuide2 = document.getElementById("itemCraftGuideBar2");
-const platWatch = document.getElementById("platWatch");
-const goldWatch = document.getElementById("goldWatch");
-const GPS = document.getElementById("GPS");
-const REK3K = document.getElementById("REK3K");
-const goblinTech = document.getElementById("goblinTech");
-const fishFinder = document.getElementById("fishFinder");
-const PDA = document.getElementById("PDA");
-const cellPhone = document.getElementById("cellPhone");
+const platWatch = document.getElementById("tracker8");
+const goldWatch = document.getElementById("tracker9");
+const GPS = document.getElementById("tracker10");
+const REK3K = document.getElementById("tracker11");
+const goblinTech = document.getElementById("tracker12");
+const fishFinder = document.getElementById("tracker13");
+const PDA = document.getElementById("tracker14");
+const cellPhone = document.getElementById("tracker15");
 
 //Ankh Shield objects
 const craftGuide3 = document.getElementById("itemCraftGuideBar3");
-const armorBracing = document.getElementById("armorBracing");
-const medicatedBandage = document.getElementById("medicatedBandage");
-const counterCurse = document.getElementById("counterCurse");
-const thePlan = document.getElementById("thePlan");
-const obsidianSkull2 = document.getElementById("obsidianSkull2");
-const obsidianShield = document.getElementById("obsidianShield");
-const blindfold = document.getElementById("blindfold")
-const ankhCharm = document.getElementById("ankhCharm");
-const ankhShield = document.getElementById("ankhShield");
+const armorBracing = document.getElementById("tracker16");
+const medicatedBandage = document.getElementById("tracker17");
+const counterCurse = document.getElementById("tracker18");
+const thePlan = document.getElementById("tracker19");
+const obsidianSkull2 = document.getElementById("tracker20");
+const obsidianShield = document.getElementById("tracker21");
+const blindfold = document.getElementById("tracker22")
+const ankhCharm = document.getElementById("tracker23");
+const ankhShield = document.getElementById("tracker24");
 
 //Zenith objects
 const craftGuide4 = document.getElementById("itemCraftGuideBar4");
-const BoG = document.getElementById("BoG");
-const muramasa = document.getElementById("muramasa");
-const FGS = document.getElementById("FGS");
-const lightsBane = document.getElementById("lightsBane");
-const BB = document.getElementById("BB")
-const nightsEdge = document.getElementById("nightsEdge");
-const CB = document.getElementById("CB");
-const excalibur = document.getElementById("excalibur");
-const trueExcalibur = document.getElementById("trueExcalibur");
-const truenightsEdge = document.getElementById("truenightsEdge");
-const terraBlade = document.getElementById("terraBlade");
-const CopperSS = document.getElementById("CopperSS");
-const starfury = document.getElementById("starfury");
-const ES = document.getElementById("ES");
-const BK = document.getElementById("BK");
-const seedler = document.getElementById("seedler");
-const THMB = document.getElementById("THMB");
-const IW = document.getElementById("IW");
-const starWrath = document.getElementById("starWrath");
-const meowmere = document.getElementById("meowmere");
-const zenith = document.getElementById("zenith");
+const BoG = document.getElementById("tracker25");
+const muramasa = document.getElementById("tracker26");
+const FGS = document.getElementById("tracker27");
+const lightsBane = document.getElementById("tracker28");
+const BB = document.getElementById("tracker29")
+const nightsEdge = document.getElementById("tracker30");
+const CB = document.getElementById("tracker31");
+const excalibur = document.getElementById("tracker32");
+const trueExcalibur = document.getElementById("tracker33");
+const truenightsEdge = document.getElementById("tracker34");
+const terraBlade = document.getElementById("tracker35");
+const CopperSS = document.getElementById("tracker36");
+const starfury = document.getElementById("tracker37");
+const ES = document.getElementById("tracker38");
+const BK = document.getElementById("tracker39");
+const seedler = document.getElementById("tracker40");
+const THMB = document.getElementById("tracker41");
+const IW = document.getElementById("tracker42");
+const starWrath = document.getElementById("tracker43");
+const meowmere = document.getElementById("tracker44");
+const zenith = document.getElementById("tracker45");
 
 //Terraspark Boots addeventlisteners
 spectreBoots.addEventListener('click', showSpectreRecipe);
@@ -148,7 +148,7 @@ function showMoltencharmRecipe() {
     craftGuide1.innerHTML = "";
         craftGuide1.innerHTML += "<div style='margin: 10px 0 0 10px'><img style='transform: scale(2)' src='../terrariaImg/Molten_Charm.png' alt='Molten Charm'><p style='float: right; margin: 10px 35% 0 0; font-size: 20px'>Made with</p><br><br>" +
             "<img style='float: left' src='../terrariaImg/Obsidian_Skull.png' alt='Obsidian Skull'><br><br><br><p style='margin-left: 15px;'>Combined with</p>" +
-            "<img style='float: left' src='../terrariaImg/Lava_Charm.png' alt='Lava Charm'><p>Obtained from <img src='../terrariaImg/Fire_Imp.png' alt='Fire Imp'></p><br>" +
+            "<img style='float: left' src='../terrariaImg/Lava_Charm.png' alt='Lava Charm'><p>Obtained from <img src='../terrariaImg/Obsidian_Crate.png' alt='Obsidian Crate'> or <img src='../terrariaImg/Gold_Chest.png' alt='Golden Chest'></p><br>" +
             "<p>At <img src='../terrariaImg/Tinkerers_Workshop.png' alt='Tinkerers Workshop'>Bought from <img src='../terrariaImg/Goblin_Tinkerer.png' alt='Goblin Tinkerer Map icon'></p></div>"
 }
 function showLavawadersRecipe() {

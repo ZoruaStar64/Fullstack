@@ -2,6 +2,8 @@
 session_start();
 require_once('creds.php');
 
+
+
 global $link;
 $showloggedin = false;
 
@@ -134,7 +136,7 @@ function inLogFormulier($link) {
             $showloggedin = true;
         }
 
-        //This part exists so the database's favorite table stays updated
+        //This part exists so the database's favorite and Trackers table stays updated
 
         $query2 = "SELECT COUNT(*) as total FROM Games";
         $result2 = $link->query($query2);
@@ -164,7 +166,33 @@ function inLogFormulier($link) {
             }
         }
 
+        $query4 = "SELECT COUNT(*) as total FROM Trackers";
+        $result4 = $link->query($query4);
+        while ($arraytable4 = $result4->fetch_assoc()) {
+            $trackerTotal = $arraytable4['total'];
+        }
+        $query5 = "SELECT COUNT(*) as existingTrackerRows FROM Trackers_has_Users WHERE Users_userId = '$userId'";
+        $result5 = $link->query($query5);
+        while ($arraytable5 = $result5->fetch_assoc()) {
+            $existingTrackerRows = $arraytable5['existingTrackerRows'];
+        }
+        $missingTrackers = $trackerTotal - $existingTrackerRows;
 
+        if ($missingTrackers > 0 && $missingTrackers <= $trackerTotal) {
+            for ($trackerStartPoint = ($existingTrackerRows + 1); $trackerStartPoint <= $trackerTotal; $trackerStartPoint++) {
+                $queryTrack = "INSERT INTO u3651p69583_tracker.Trackers_has_Users(Trackers_idTrackers, Users_userId) VALUE (?, ?)";
+                $stmt2 = mysqli_prepare($link, $queryTrack);
+                $stmt2->bind_param("ii", $trackerStartPoint, $userId);
+                if (!$stmt2) {
+                    die("mysqli error: " . mysqli_error($link));
+                } else {
+                    mysqli_stmt_execute($stmt2);
+
+                    echo mysqli_stmt_error($stmt2);
+                    mysqli_stmt_close($stmt2);
+                }
+            }
+        }
 
     }
     else {
@@ -275,6 +303,24 @@ function createGame($link, $gameName, $gameCover, $pageLink) {
         $query = "INSERT INTO u3651p69583_tracker.Games(`gameName`, gameCover, pageLink) VALUE (?, ?, ?)";
         $stmt1 = mysqli_prepare($link, $query);
         $stmt1->bind_param("sss", $gameName, $gameCover, $pageLink);
+        if (!$stmt1) {
+            die("mysqli error: " . mysqli_error($link));
+        } else {
+            mysqli_stmt_execute($stmt1);
+
+            echo mysqli_stmt_error($stmt1);
+            mysqli_stmt_close($stmt1);
+            /*header("Location: mainMenu.php");*/
+        }
+    }
+}
+
+function createItem($link, $itemName, $gameId) {
+    {
+
+        $query = "INSERT INTO Trackers(`trackerName`, Games_idGame) VALUE (?, ?)";
+        $stmt1 = mysqli_prepare($link, $query);
+        $stmt1->bind_param("si", $itemName, $gameId);
         if (!$stmt1) {
             die("mysqli error: " . mysqli_error($link));
         } else {

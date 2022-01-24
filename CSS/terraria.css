@@ -105,6 +105,10 @@ html {
     filter: grayscale(100%);
 }
 
+.ungrayscale {
+    filter: grayscale(0%);
+}
+
 .pageContainer1 {
     background-color: #0E5F07;
     border: #268b00 solid 10px;
