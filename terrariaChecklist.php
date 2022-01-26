@@ -1,24 +1,77 @@
 <?php
 include_once('functions.php');
 include_once('creds.php');
-$userId = $_SESSION['user']['userId'];
-$query = "SELECT * FROM Trackers INNER JOIN Trackers_has_Users ON Trackers.idTrackers = Trackers_has_Users.Trackers_idTrackers WHERE Trackers_has_Users.Users_userId = '$userId'";
-$result = $link->query($query);
 
-while ($arraytable = $result->fetch_assoc()) {
 
-    $trackerId = $arraytable['Trackers.idTrackers'];
-    $checked = $arraytable['checked'];
+function loadTerrariaItems($link) {
 
-    if ($checked == 0) {
-        $class = 'grayscale';
-        echo "the check is 0";
-    } elseif ($checked == 1) {
-        $class = 'ungrayscale';
-        echo "the check is 1";
+    $userId = $_SESSION['user']['userId'];
+    $currentItem = 0;
+    $query = "SELECT * FROM Trackers INNER JOIN Trackers_has_Users ON Trackers.idTrackers = Trackers_has_Users.Trackers_idTrackers WHERE Trackers_has_Users.Users_userId = '$userId'";
+    $result = $link->query($query);
+    while ($arraytable = $result->fetch_assoc()) {
+
+        $trackerName = $arraytable['trackerName'];
+        $trackerId = $arraytable['Trackers_idTrackers'];
+        $checked = $arraytable['checked'];
+        $currentItem += 1;
+
+        if ($checked == 0) {
+            $class = 'grayscale';
+            echo "the check is 0";
+        } elseif ($checked == 1) {
+            $class = 'ungrayscale';
+            echo "the check is 1";
+        }
+
+
+        if ($currentItem == 1) {
+            echo '<div class="Terraspark">
+        <h1 id="terraSparkTitle">Terraspark</h1>
+
+        <div id="itemCraftGuideBar1" class="craftGuideStyle">
+
+        </div>
+        
+        <div id="createFrostspark">';
+        }
+
+        if ($currentItem > 0 && $currentItem < 4) {
+            echo '<p>
+
+                 <img class="' . $class . '" id="tracker' . $trackerId . '" src="terrariaImg/' . $trackerName . '.png" alt="' . $trackerName . '">
+
+            </p>';
+        }
+        if ($currentItem == 4) {
+            echo '</div>';
+
+            echo '<div id="createLavaWaders">';
+        }
+
+        if ($currentItem > 3 && $currentItem < 7) {
+            echo '<p>
+
+                 <img class="' . $class . '" id="tracker' . $trackerId . '" src="terrariaImg/' . $trackerName . '.png" alt="' . $trackerName . '">
+
+            </p>';
+        }
+        if ($currentItem == 7) {
+            echo '</div>';
+
+            echo '<div id="createTerraSpark">';
+            echo '<p>
+                 <img class="' . $class . '" id="tracker' . $trackerId . '" src="terrariaImg/' . $trackerName . '.png" alt="' . $trackerName . '">
+            </p>
+        
+        </div>
+
+</div>';
+        }
+
     }
-
 }
+
 ?>
 
 <!doctype html>
@@ -43,7 +96,9 @@ while ($arraytable = $result->fetch_assoc()) {
 
 <div class="pageContainer1">
 
-    <div class="Terraspark">
+    <?php loadTerrariaItems($link); ?>
+
+<!--    <div class="Terraspark">
         <h1 id="terraSparkTitle" >Terraspark</h1>
 
         <div id="itemCraftGuideBar1" class="craftGuideStyle">
@@ -61,12 +116,6 @@ while ($arraytable = $result->fetch_assoc()) {
             </p>
         </div>
 
-        <div id="createTerraSpark">
-            <p>
-                <img class="grayscale" id="tracker7" src="terrariaImg/Terraspark_Boots.png" alt="Terraspark Boots">
-            </p>
-        </div>
-
     <div id="createLavaWaders">
         <p>
             <img id="tracker4" src="terrariaImg/Obsidian_Skull.png" alt="Obsidian Skull">
@@ -77,9 +126,13 @@ while ($arraytable = $result->fetch_assoc()) {
         </p>
     </div>
 
+        <div id="createTerraSpark">
+            <p>
+                <img class="grayscale" id="tracker7" src="terrariaImg/Terraspark_Boots.png" alt="Terraspark Boots">
+            </p>
+        </div>
 
-</div>
-
+</div>-->
 
 </div>
 <div class="pageContainer2">

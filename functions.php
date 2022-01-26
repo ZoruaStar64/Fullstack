@@ -319,15 +319,15 @@ function createItem($link, $itemName, $gameId) {
     {
 
         $query = "INSERT INTO Trackers(`trackerName`, Games_idGame) VALUE (?, ?)";
-        $stmt1 = mysqli_prepare($link, $query);
-        $stmt1->bind_param("si", $itemName, $gameId);
+        $stmt1 = mysqli_prepare($link, $query) or die ('Error 1');
+        $stmt1->bind_param("si", $itemName, $gameId) or die ('error bind');
         if (!$stmt1) {
             die("mysqli error: " . mysqli_error($link));
         } else {
-            mysqli_stmt_execute($stmt1);
+            mysqli_stmt_execute($stmt1)/* or die ('Error 2')*/;
 
             echo mysqli_stmt_error($stmt1);
-            mysqli_stmt_close($stmt1);
+            mysqli_stmt_close($stmt1) or die ('Erroe 3');
             /*header("Location: mainMenu.php");*/
         }
     }

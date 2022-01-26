@@ -2,10 +2,10 @@
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
     <data-source source="LOCAL" name="startracker" uuid="a8984eca-3590-4c7f-bacb-dfd8eb57b8ba">
-      <driver-ref>mysql.8</driver-ref>
+      <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://web0098.zxcs.nl:3306/u3651p69583_tracker</jdbc-url>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://web0098.zxcs.nl:3306/u3651p69583_tracker</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
