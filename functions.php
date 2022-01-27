@@ -383,10 +383,6 @@ function loadGames($link) {
 //end of Main Menu functions
 //start of Tchecklist functions
 
-function checkTerrariaItem() {
-
-}
-
 
 //start of misc functions
 

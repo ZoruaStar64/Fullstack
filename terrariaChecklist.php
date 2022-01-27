@@ -3,6 +3,8 @@ include_once('functions.php');
 include_once('creds.php');
 
 
+
+
 function loadTerrariaItems($link) {
 
     $userId = $_SESSION['user']['userId'];
@@ -18,15 +20,21 @@ function loadTerrariaItems($link) {
 
         if ($checked == 0) {
             $class = 'grayscale';
-            echo "the check is 0";
+            /*echo "the check is 0";*/
         } elseif ($checked == 1) {
             $class = 'ungrayscale';
-            echo "the check is 1";
+            /*echo "the check is 1";*/
         }
 
+        $item = '<div><form id="checkItemT" name="checkItemT" action="includes/inc.checkItem.php" method="POST">
+            <input type="hidden" value="' . $trackerId .'" name="hiddenId1">
+            <input type="hidden" value="' . $userId .'" name="hiddenId2">
+
+            <input type="image" value="" class="' . $class . '" src="terrariaImg/'. $trackerName .'.png" alt="'. $trackerName .'" name="checkItemT">
+            </form><p class="recipeButton" id="tracker'. $trackerId .'">View Recipe</p></div>';
 
         if ($currentItem == 1) {
-            echo '<div class="Terraspark">
+            echo '<div class="pageContainer1"><div class="Terraspark">
         <h1 id="terraSparkTitle">Terraspark</h1>
 
         <div id="itemCraftGuideBar1" class="craftGuideStyle">
@@ -37,11 +45,7 @@ function loadTerrariaItems($link) {
         }
 
         if ($currentItem > 0 && $currentItem < 4) {
-            echo '<p>
-
-                 <img class="' . $class . '" id="tracker' . $trackerId . '" src="terrariaImg/' . $trackerName . '.png" alt="' . $trackerName . '">
-
-            </p>';
+            echo $item;
         }
         if ($currentItem == 4) {
             echo '</div>';
@@ -50,25 +54,118 @@ function loadTerrariaItems($link) {
         }
 
         if ($currentItem > 3 && $currentItem < 7) {
-            echo '<p>
-
-                 <img class="' . $class . '" id="tracker' . $trackerId . '" src="terrariaImg/' . $trackerName . '.png" alt="' . $trackerName . '">
-
-            </p>';
+            echo $item;
         }
         if ($currentItem == 7) {
             echo '</div>';
 
             echo '<div id="createTerraSpark">';
-            echo '<p>
-                 <img class="' . $class . '" id="tracker' . $trackerId . '" src="terrariaImg/' . $trackerName . '.png" alt="' . $trackerName . '">
-            </p>
-        
-        </div>
+            echo $item;
+            echo '</div></div></div>';
 
-</div>';
         }
 
+        if ($currentItem == 8) {
+            echo '<div class="pageContainer2">
+                  <div class="Cellphone">
+                  <h1 id="cellphoneTitle">Cellphone</h1>
+                  <div id="itemCraftGuideBar2" class="craftGuideStyle">
+
+            </div>
+            <div id="createGPS">';
+        }
+        if ($currentItem > 7 && $currentItem < 11) {
+            echo $item;
+        }
+        if ($currentItem == 11) {
+            echo '</div><div id="createREK3K">';
+            echo $item;
+            echo '</div>';
+        }
+        if ($currentItem == 12) {
+            echo '<div id="createGoblinTech">';
+            echo $item;
+            echo '</div>';
+        }
+        if ($currentItem == 13) {
+            echo '<div id="createFishFinder">';
+            echo $item;
+            echo '</div>';
+        }
+        if ($currentItem == 14) {
+            echo '<div id="createPhone">';
+        }
+        if ($currentItem > 13 && $currentItem < 16) {
+            echo $item;
+
+        }
+        if ($currentItem == 15) {
+            echo '</div></div></div>';
+        }
+
+        if ($currentItem == 16) {
+            echo '<div class="pageContainer3">
+        <div class="AnkhShield">
+        <h1 id="ankhShieldTitle">Ankh Shield</h1>
+        <div id="itemCraftGuideBar3" class="craftGuideStyle">
+
+        </div>
+
+        <div id="createArmorBracing">';
+            echo $item;
+            echo '</div>';
+        }
+        if ($currentItem == 17) {
+            echo '<div id="createMedicatedBandage">';
+            echo $item;
+            echo '</div>';
+        }
+        if ($currentItem == 18) {
+            echo '<div id="createCounterCurse">';
+            echo $item;
+            echo '</div>';
+        }
+        if ($currentItem == 19) {
+            echo '<div id="createThePlan">';
+            echo $item;
+            echo '</div>';
+            echo '<div id="createAnkhShield">';
+        }
+        if ($currentItem > 19 && $currentItem < 25) {
+            echo $item;
+        }
+        if ($currentItem == 24) {
+            echo '</div></div></div>';
+        }
+
+        if ($currentItem == 25) {
+            echo '<div class="pageContainer4">
+        <div class="Zenith">
+        <h1 id="zenithTitle">Zenith</h1>
+        <div id="itemCraftGuideBar4" class="craftGuideStyle">
+
+        </div>
+
+        <div id="createNightsEdge">';
+        }
+        if ($currentItem > 24 && $currentItem < 30) {
+            echo $item;
+        }
+        if ($currentItem == 30) {
+            echo '</div><div id="createTerrablade">';
+        }
+        if ($currentItem > 29 && $currentItem < 36) {
+            echo $item;
+        }
+        if ($currentItem == 36) {
+            echo '</div><div id="createZenith">';
+        }
+        if ($currentItem > 35 && $currentItem < 46) {
+            echo $item;
+        }
+        if ($currentItem == 45) {
+            echo '</div></div></div>';
+        }
     }
 }
 
@@ -94,177 +191,7 @@ function loadTerrariaItems($link) {
     </div>
 </div>
 
-<div class="pageContainer1">
-
     <?php loadTerrariaItems($link); ?>
-
-<!--    <div class="Terraspark">
-        <h1 id="terraSparkTitle" >Terraspark</h1>
-
-        <div id="itemCraftGuideBar1" class="craftGuideStyle">
-
-        </div>
-        <div id="createFrostspark">
-            <p>
-
-                 <img id="tracker1" src="terrariaImg/Spectre_Boots.png" alt="Spectre Boots"> <br>
-
-                 <img id="tracker2" src="terrariaImg/Lightning_Boots.png" alt="Lightning Boots"> <br>
-
-                 <img id="tracker3" src="terrariaImg/Frostspark_Boots.png" alt="Frostspark Boots">
-
-            </p>
-        </div>
-
-    <div id="createLavaWaders">
-        <p>
-            <img id="tracker4" src="terrariaImg/Obsidian_Skull.png" alt="Obsidian Skull">
-            <br>
-            <img id="tracker5" src="terrariaImg/Molten_Charm.png" alt="Molten Charm">
-            <br>
-            <img id="tracker6" src="terrariaImg/Lava_Waders.png" alt="Lava Waders">
-        </p>
-    </div>
-
-        <div id="createTerraSpark">
-            <p>
-                <img class="grayscale" id="tracker7" src="terrariaImg/Terraspark_Boots.png" alt="Terraspark Boots">
-            </p>
-        </div>
-
-</div>-->
-
-</div>
-<div class="pageContainer2">
-    <div class="Cellphone">
-        <h1 id="cellphoneTitle">Cellphone</h1>
-        <div id="itemCraftGuideBar2" class="craftGuideStyle">
-
-        </div>
-        <div id="createGPS">
-            <p>
-                <img id="tracker8" src="terrariaImg/Platinum_Watch.png" alt="Platinum Watch">
-                <img id="tracker9" src="terrariaImg/Gold_Watch.png" alt="Gold Watch">
-                <br>
-                <img id="tracker10" src="terrariaImg/GPS.png" alt="GPS">
-            </p>
-        </div>
-
-        <div id="createREK3K">
-            <p>
-            <img class="grayscale" id="tracker11" src="terrariaImg/R.E.K._3000.png" alt="R.E.K.3000">
-            </p>
-        </div>
-
-        <div id="createGoblinTech">
-        <p>
-            <img class="grayscale" id="tracker12" src="terrariaImg/Goblin_Tech.png" alt="Goblin Tech">
-        </p>
-        </div>
-
-        <div id="createFishFinder">
-            <p>
-                <img class="grayscale" id="tracker13" src="terrariaImg/Fish_Finder.png" alt="Fish Finder">
-            </p>
-        </div>
-
-        <div id="createPhone">
-            <p>
-            <img id="tracker14" src="terrariaImg/PDA.png" alt="PDA">
-            <img id="tracker15" src="terrariaImg/Cell_Phone.png" alt="Cellphone">
-            </p>
-        </div>
-
-    </div>
-</div>
-
-<div class="pageContainer3">
-    <div class="AnkhShield">
-        <h1 id="ankhShieldTitle">Ankh Shield</h1>
-        <div id="itemCraftGuideBar3" class="craftGuideStyle">
-
-        </div>
-
-        <div id="createArmorBracing">
-            <p>
-                <img class="grayscale" id="tracker16" src="terrariaImg/Armor_Bracing.png" alt="Armor Bracing">
-            </p>
-        </div>
-
-        <div id="createMedicatedBandage">
-            <p>
-                <img class="grayscale" id="tracker17" src="terrariaImg/Medicated_Bandage.png" alt="Medicated Bandage">
-            </p>
-        </div>
-
-        <div id="createCounterCurse">
-            <p>
-                <img class="grayscale" id="tracker18" src="terrariaImg/Countercurse_Mantra.png" alt="Countercurse Mantra">
-            </p>
-        </div>
-
-        <div id="createThePlan">
-            <p>
-                <img class="grayscale" id="tracker19" src="terrariaImg/The_Plan.png" alt="The Plan">
-            </p>
-        </div>
-
-        <div id="createAnkhShield">
-            <p>
-                <img id="tracker20" src="terrariaImg/Obsidian_Skull.png" alt="Obsidian Skull">
-                <img id="tracker22" src="terrariaImg/Blindfold.png" alt="Blindfold">
-                <br>
-                <img id="tracker21" src="terrariaImg/Obsidian_Shield.png" alt="Obsidian Shield">
-                <img id="tracker23" src="terrariaImg/Ankh_Charm.png" alt="Ankh Charm">
-                <br>
-                <img id="tracker24" src="terrariaImg/Ankh_Shield.png" alt="Ankh Shield">
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="pageContainer4">
-    <div class="Zenith">
-        <h1 id="zenithTitle">Zenith</h1>
-        <div id="itemCraftGuideBar4" class="craftGuideStyle">
-
-        </div>
-
-        <div id="createNightsEdge">
-            <img id="tracker25" src="terrariaImg/Blade_of_Grass.png" alt="Blade of Grass">
-            <img id="tracker26" src="terrariaImg/Muramasa.png" alt="Muramasa">
-            <img id="tracker27" src="terrariaImg/Fiery_Greatsword.png" alt="Fiery Greatsword">
-            <img id="tracker28" src="terrariaImg/Lights_Bane.png" alt="Lights Bane">
-            <img id="tracker29" src="terrariaImg/Blood_Butcherer.png" alt="Blood Butcherer">
-        </div>
-
-        <div id="createTerrablade">
-            <img id="tracker31" src="terrariaImg/Chlorophyte_Bar.png" alt="Chlorophyte Bar">
-            <img id="tracker32" src="terrariaImg/Excalibur.png" alt="Excalibur">
-            <img id="tracker30" src="terrariaImg/Nights_Edge.png" alt="Nights Edge">
-            <br>
-            <img id="tracker33" src="terrariaImg/True_Excalibur.png" alt="True Excalibur">
-            <img id="tracker34" src="terrariaImg/True_Nights_Edge.png" alt="True Nights Edge">
-            <br>
-            <img id="tracker35" src="terrariaImg/Terra_Blade.png" alt="Terra Blade">
-        </div>
-
-        <div id="createZenith">
-            <img id="tracker36" src="terrariaImg/Copper_Shortsword.png" alt="Copper Shortsword">
-            <img id="tracker37" src="terrariaImg/Starfury.png" alt="Starfury">
-            <img id="tracker38" src="terrariaImg/Enchanted_Sword.png" alt="Enchanted Sword">
-            <img id="tracker39" src="terrariaImg/Bee_Keeper.png" alt="Bee Keeper">
-            <img id="tracker40" src="terrariaImg/Seedler.png" alt="Seedler">
-            <img id="tracker41" src="terrariaImg/The_Horsemans_Blade.png" alt="The Horsemans Blade">
-            <img id="tracker42" src="terrariaImg/Influx_Waver.png" alt="Influx Waver">
-            <img id="tracker43" src="terrariaImg/Star_Wrath.png" alt="Star Wrath">
-            <img id="tracker44" src="terrariaImg/Meowmere.png" alt="Meowmere">
-            <br>
-            <img id="tracker45" src="terrariaImg/Zenith.png" alt="Zenith">
-        </div>
-
-    </div>
-</div>
 
 <script src="JS/terraria.js"></script>
 </body>
